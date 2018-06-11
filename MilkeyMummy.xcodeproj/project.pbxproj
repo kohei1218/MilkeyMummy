@@ -14,6 +14,7 @@
 		552B813C20CE3F1B00E8C71A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 552B813B20CE3F1B00E8C71A /* Assets.xcassets */; };
 		552B813F20CE3F1B00E8C71A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 552B813D20CE3F1B00E8C71A /* LaunchScreen.storyboard */; };
 		552B815320CE431E00E8C71A /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B815220CE431E00E8C71A /* Environment.swift */; };
+		7CE6795270B2146E097D4E24 /* Pods_MilkeyMummy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3955F4ABC00D016156AE482 /* Pods_MilkeyMummy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,13 @@
 		552B813E20CE3F1B00E8C71A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		552B814020CE3F1B00E8C71A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		552B815220CE431E00E8C71A /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		C4744C64275D79667383646D /* Pods-MilkeyMummy.develop_release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkeyMummy.develop_release.xcconfig"; path = "Pods/Target Support Files/Pods-MilkeyMummy/Pods-MilkeyMummy.develop_release.xcconfig"; sourceTree = "<group>"; };
+		D3955F4ABC00D016156AE482 /* Pods_MilkeyMummy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MilkeyMummy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D88755DE3B5F3BB9F564E57C /* Pods-MilkeyMummy.staging_debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkeyMummy.staging_debug.xcconfig"; path = "Pods/Target Support Files/Pods-MilkeyMummy/Pods-MilkeyMummy.staging_debug.xcconfig"; sourceTree = "<group>"; };
+		DF9977C93DA47B914C0CB02F /* Pods-MilkeyMummy.develop_debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkeyMummy.develop_debug.xcconfig"; path = "Pods/Target Support Files/Pods-MilkeyMummy/Pods-MilkeyMummy.develop_debug.xcconfig"; sourceTree = "<group>"; };
+		E6D4241ABEDF96374A023C9F /* Pods-MilkeyMummy.production_debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkeyMummy.production_debug.xcconfig"; path = "Pods/Target Support Files/Pods-MilkeyMummy/Pods-MilkeyMummy.production_debug.xcconfig"; sourceTree = "<group>"; };
+		F4B1C66AA18D18429AC7D637 /* Pods-MilkeyMummy.production_release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkeyMummy.production_release.xcconfig"; path = "Pods/Target Support Files/Pods-MilkeyMummy/Pods-MilkeyMummy.production_release.xcconfig"; sourceTree = "<group>"; };
+		F6EA1ECA6CE001D8E177146F /* Pods-MilkeyMummy.staging_release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkeyMummy.staging_release.xcconfig"; path = "Pods/Target Support Files/Pods-MilkeyMummy/Pods-MilkeyMummy.staging_release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +41,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CE6795270B2146E097D4E24 /* Pods_MilkeyMummy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40068A85CC0EB8707604F556 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E6D4241ABEDF96374A023C9F /* Pods-MilkeyMummy.production_debug.xcconfig */,
+				D88755DE3B5F3BB9F564E57C /* Pods-MilkeyMummy.staging_debug.xcconfig */,
+				DF9977C93DA47B914C0CB02F /* Pods-MilkeyMummy.develop_debug.xcconfig */,
+				F4B1C66AA18D18429AC7D637 /* Pods-MilkeyMummy.production_release.xcconfig */,
+				F6EA1ECA6CE001D8E177146F /* Pods-MilkeyMummy.staging_release.xcconfig */,
+				C4744C64275D79667383646D /* Pods-MilkeyMummy.develop_release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		552B812520CE3F1A00E8C71A = {
 			isa = PBXGroup;
 			children = (
 				552B813020CE3F1A00E8C71A /* MilkeyMummy */,
 				552B812F20CE3F1A00E8C71A /* Products */,
+				40068A85CC0EB8707604F556 /* Pods */,
+				CAA28954140B6A88E55FE2E5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,15 +83,55 @@
 			isa = PBXGroup;
 			children = (
 				552B813120CE3F1A00E8C71A /* AppDelegate.swift */,
-				552B813320CE3F1A00E8C71A /* ViewController.swift */,
-				552B813520CE3F1A00E8C71A /* Main.storyboard */,
+				552B815620CE85F900E8C71A /* ViewControllers */,
+				552B815720CE862500E8C71A /* Storyboards */,
+				552B815520CE85E200E8C71A /* GooglePlists */,
+				552B815820CE864500E8C71A /* Helpers */,
 				552B813B20CE3F1B00E8C71A /* Assets.xcassets */,
 				552B813D20CE3F1B00E8C71A /* LaunchScreen.storyboard */,
 				552B814020CE3F1B00E8C71A /* Info.plist */,
 				552B813820CE3F1A00E8C71A /* MilkeyMummy.xcdatamodeld */,
-				552B815220CE431E00E8C71A /* Environment.swift */,
 			);
 			path = MilkeyMummy;
+			sourceTree = "<group>";
+		};
+		552B815520CE85E200E8C71A /* GooglePlists */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GooglePlists;
+			sourceTree = "<group>";
+		};
+		552B815620CE85F900E8C71A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				552B813320CE3F1A00E8C71A /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		552B815720CE862500E8C71A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				552B813520CE3F1A00E8C71A /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		552B815820CE864500E8C71A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				552B815220CE431E00E8C71A /* Environment.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CAA28954140B6A88E55FE2E5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3955F4ABC00D016156AE482 /* Pods_MilkeyMummy.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +141,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 552B814320CE3F1B00E8C71A /* Build configuration list for PBXNativeTarget "MilkeyMummy" */;
 			buildPhases = (
+				EC82F4A18EBA25CA40569C1C /* [CP] Check Pods Manifest.lock */,
 				552B812A20CE3F1A00E8C71A /* Sources */,
 				552B812B20CE3F1A00E8C71A /* Frameworks */,
 				552B812C20CE3F1A00E8C71A /* Resources */,
+				998BA2C25233BD2A87A46A12 /* [CP] Embed Pods Frameworks */,
+				B2DC5371E04AADF0673E21C2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -135,6 +202,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		998BA2C25233BD2A87A46A12 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MilkeyMummy/Pods-MilkeyMummy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2DC5371E04AADF0673E21C2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MilkeyMummy/Pods-MilkeyMummy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC82F4A18EBA25CA40569C1C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		552B812A20CE3F1A00E8C71A /* Sources */ = {
@@ -232,6 +347,7 @@
 		};
 		552B814720CE3F5000E8C71A /* Develop_Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF9977C93DA47B914C0CB02F /* Pods-MilkeyMummy.develop_debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -305,6 +421,7 @@
 		};
 		552B814920CE3F5C00E8C71A /* Develop_Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4744C64275D79667383646D /* Pods-MilkeyMummy.develop_release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -384,6 +501,7 @@
 		};
 		552B814B20CE3F6500E8C71A /* Staging_Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D88755DE3B5F3BB9F564E57C /* Pods-MilkeyMummy.staging_debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -457,6 +575,7 @@
 		};
 		552B814D20CE3F7300E8C71A /* Staging_Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6EA1ECA6CE001D8E177146F /* Pods-MilkeyMummy.staging_release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -536,6 +655,7 @@
 		};
 		552B814F20CE3F7D00E8C71A /* Production_Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6D4241ABEDF96374A023C9F /* Pods-MilkeyMummy.production_debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -609,6 +729,7 @@
 		};
 		552B815120CE3F8A00E8C71A /* Production_Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4B1C66AA18D18429AC7D637 /* Pods-MilkeyMummy.production_release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
