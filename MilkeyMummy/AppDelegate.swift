@@ -17,8 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        FirebaseApp.configure(options: )
+        var firebasePlistFileName = ""
+        switch Environment.getFlaverType() {
+        case Environment.FlaverType.develop:
+            if Environment.getBuildType() == Environment.BuildType.debug {
+                firebasePlistFileName = "GoogleService-Info-develop-debug"
+            } else {
+                firebasePlistFileName = "GoogleService-Info-develop-release"
+            }
+        default:
+            firebasePlistFileName = "GoogleService-Info-develop-debug"
+        }
+        let options = FirebaseOptions.init(contentsOfFile: Bundle.main.path(forResource: firebasePlistFileName, ofType: "plist")!)
+        FirebaseApp.configure(options: options!)
         return true
     }
 

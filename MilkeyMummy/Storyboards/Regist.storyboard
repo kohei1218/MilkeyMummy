@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IYa-mX-QFn">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Regist View Controller-->
+        <scene sceneID="uu3-aH-Lsy">
+            <objects>
+                <viewController id="IYa-mX-QFn" customClass="RegistViewController" customModule="MilkeyMummy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="88i-6V-7jb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZrQ-Fh-RRK">
+                                <rect key="frame" x="0.0" y="20" width="375" height="333.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZcQ-R6-hXn">
+                                        <rect key="frame" x="164" y="151" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="actionRegistFemale:" destination="IYa-mX-QFn" eventType="touchUpInside" id="6Z5-nP-xPe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ZcQ-R6-hXn" firstAttribute="centerX" secondItem="ZrQ-Fh-RRK" secondAttribute="centerX" id="0vc-fJ-0Jd"/>
+                                    <constraint firstItem="ZcQ-R6-hXn" firstAttribute="centerY" secondItem="ZrQ-Fh-RRK" secondAttribute="centerY" id="Oro-nR-bkU"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6or-MF-6LJ">
+                                <rect key="frame" x="0.0" y="354" width="375" height="333.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gib-EC-RbI">
+                                        <rect key="frame" x="164" y="151" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="actionRegistMale:" destination="IYa-mX-QFn" eventType="touchUpInside" id="yZ6-Ge-O7e"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Gib-EC-RbI" firstAttribute="centerY" secondItem="6or-MF-6LJ" secondAttribute="centerY" id="2tB-AF-57M"/>
+                                    <constraint firstItem="Gib-EC-RbI" firstAttribute="centerX" secondItem="6or-MF-6LJ" secondAttribute="centerX" id="Ybn-6N-YLR"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZrQ-Fh-RRK" firstAttribute="top" secondItem="EtD-NY-4Hx" secondAttribute="top" id="HQc-Dd-WsQ"/>
+                            <constraint firstItem="6or-MF-6LJ" firstAttribute="height" secondItem="ZrQ-Fh-RRK" secondAttribute="height" id="VyF-66-xnL"/>
+                            <constraint firstItem="6or-MF-6LJ" firstAttribute="leading" secondItem="EtD-NY-4Hx" secondAttribute="leading" id="X2f-fK-Ah3"/>
+                            <constraint firstItem="EtD-NY-4Hx" firstAttribute="trailing" secondItem="6or-MF-6LJ" secondAttribute="trailing" id="a3i-wD-iPX"/>
+                            <constraint firstItem="6or-MF-6LJ" firstAttribute="top" secondItem="ZrQ-Fh-RRK" secondAttribute="bottom" id="eb3-Gl-ncO"/>
+                            <constraint firstItem="ZrQ-Fh-RRK" firstAttribute="height" secondItem="88i-6V-7jb" secondAttribute="height" multiplier="0.5" id="tmm-g4-vqd"/>
+                            <constraint firstItem="ZrQ-Fh-RRK" firstAttribute="leading" secondItem="EtD-NY-4Hx" secondAttribute="leading" id="wi4-GP-Cbk"/>
+                            <constraint firstItem="EtD-NY-4Hx" firstAttribute="trailing" secondItem="ZrQ-Fh-RRK" secondAttribute="trailing" id="yXW-fu-lga"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EtD-NY-4Hx"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oYy-xJ-rjx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6" y="86"/>
+        </scene>
+    </scenes>
+</document>

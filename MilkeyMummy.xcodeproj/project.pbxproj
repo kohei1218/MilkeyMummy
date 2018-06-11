@@ -14,6 +14,10 @@
 		552B813C20CE3F1B00E8C71A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 552B813B20CE3F1B00E8C71A /* Assets.xcassets */; };
 		552B813F20CE3F1B00E8C71A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 552B813D20CE3F1B00E8C71A /* LaunchScreen.storyboard */; };
 		552B815320CE431E00E8C71A /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B815220CE431E00E8C71A /* Environment.swift */; };
+		552B815B20CE88A700E8C71A /* GoogleService-Info-develop-debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = 552B815920CE88A700E8C71A /* GoogleService-Info-develop-debug.plist */; };
+		552B815C20CE88A700E8C71A /* GoogleService-Info-develop-release.plist in Resources */ = {isa = PBXBuildFile; fileRef = 552B815A20CE88A700E8C71A /* GoogleService-Info-develop-release.plist */; };
+		552B815E20CE92F800E8C71A /* Regist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 552B815D20CE92F800E8C71A /* Regist.storyboard */; };
+		552B816020CE969500E8C71A /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B815F20CE969500E8C71A /* RegistViewController.swift */; };
 		7CE6795270B2146E097D4E24 /* Pods_MilkeyMummy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3955F4ABC00D016156AE482 /* Pods_MilkeyMummy.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +31,10 @@
 		552B813E20CE3F1B00E8C71A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		552B814020CE3F1B00E8C71A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		552B815220CE431E00E8C71A /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		552B815920CE88A700E8C71A /* GoogleService-Info-develop-debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-develop-debug.plist"; sourceTree = "<group>"; };
+		552B815A20CE88A700E8C71A /* GoogleService-Info-develop-release.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-develop-release.plist"; sourceTree = "<group>"; };
+		552B815D20CE92F800E8C71A /* Regist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Regist.storyboard; sourceTree = "<group>"; };
+		552B815F20CE969500E8C71A /* RegistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
 		C4744C64275D79667383646D /* Pods-MilkeyMummy.develop_release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkeyMummy.develop_release.xcconfig"; path = "Pods/Target Support Files/Pods-MilkeyMummy/Pods-MilkeyMummy.develop_release.xcconfig"; sourceTree = "<group>"; };
 		D3955F4ABC00D016156AE482 /* Pods_MilkeyMummy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MilkeyMummy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D88755DE3B5F3BB9F564E57C /* Pods-MilkeyMummy.staging_debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkeyMummy.staging_debug.xcconfig"; path = "Pods/Target Support Files/Pods-MilkeyMummy/Pods-MilkeyMummy.staging_debug.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +106,8 @@
 		552B815520CE85E200E8C71A /* GooglePlists */ = {
 			isa = PBXGroup;
 			children = (
+				552B815920CE88A700E8C71A /* GoogleService-Info-develop-debug.plist */,
+				552B815A20CE88A700E8C71A /* GoogleService-Info-develop-release.plist */,
 			);
 			path = GooglePlists;
 			sourceTree = "<group>";
@@ -106,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				552B813320CE3F1A00E8C71A /* ViewController.swift */,
+				552B815F20CE969500E8C71A /* RegistViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -114,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				552B813520CE3F1A00E8C71A /* Main.storyboard */,
+				552B815D20CE92F800E8C71A /* Regist.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -195,9 +207,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				552B815C20CE88A700E8C71A /* GoogleService-Info-develop-release.plist in Resources */,
 				552B813F20CE3F1B00E8C71A /* LaunchScreen.storyboard in Resources */,
 				552B813C20CE3F1B00E8C71A /* Assets.xcassets in Resources */,
 				552B813720CE3F1A00E8C71A /* Main.storyboard in Resources */,
+				552B815E20CE92F800E8C71A /* Regist.storyboard in Resources */,
+				552B815B20CE88A700E8C71A /* GoogleService-Info-develop-debug.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				552B816020CE969500E8C71A /* RegistViewController.swift in Sources */,
 				552B813420CE3F1A00E8C71A /* ViewController.swift in Sources */,
 				552B815320CE431E00E8C71A /* Environment.swift in Sources */,
 				552B813220CE3F1A00E8C71A /* AppDelegate.swift in Sources */,
