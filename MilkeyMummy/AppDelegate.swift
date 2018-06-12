@@ -9,9 +9,11 @@
 import UIKit
 import CoreData
 import Firebase
+import FirebaseAuth
+import FBSDKCoreKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate{
 
     var window: UIWindow?
 
@@ -30,6 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         let options = FirebaseOptions.init(contentsOfFile: Bundle.main.path(forResource: firebasePlistFileName, ofType: "plist")!)
         FirebaseApp.configure(options: options!)
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        showRootViewControoler()
         return true
     }
 
@@ -55,6 +60,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+    }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        let handled = FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: application)
+        return handled
+    }
+    
+    func showRootViewControoler() {
+        let storyboard:UIStoryboard = UIStoryboard(name: "Regist",bundle:nil)
+        window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "RegistViewController")
     }
 
     // MARK: - Core Data stack

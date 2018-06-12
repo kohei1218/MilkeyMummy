@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+import Firebase
 
 class RegistViewController: UIViewController {
 
@@ -22,7 +24,6 @@ class RegistViewController: UIViewController {
     }
     
     @IBAction func actionRegistFemale(_ sender: Any) {
-        
     }
     
     @IBAction func actionRegistMale(_ sender: Any) {
@@ -40,3 +41,27 @@ class RegistViewController: UIViewController {
     */
 
 }
+
+extension RegistViewController: FBSDKLoginButtonDelegate {
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+        Auth.auth().signIn(with: credential) { (user, error) in
+            if let error = error {
+                print("error", error.localizedDescription)
+                return
+            }
+            print("ログイン成功")
+        }
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        
+    }
+}
+    
+

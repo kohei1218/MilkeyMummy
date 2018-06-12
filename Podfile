@@ -7,5 +7,8 @@ target 'MilkeyMummy' do
 
   # Pods for MilkeyMummy
   pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'FBSDKLoginKit'
+  pod 'SVProgressHUD'
 
 end
