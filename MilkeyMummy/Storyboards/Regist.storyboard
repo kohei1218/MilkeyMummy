@@ -40,11 +40,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6or-MF-6LJ">
                                 <rect key="frame" x="0.0" y="354" width="375" height="333.5"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gib-EC-RbI">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gib-EC-RbI" customClass="FBSDKLoginButton">
                                         <rect key="frame" x="164" y="151" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="actionRegistMale:" destination="IYa-mX-QFn" eventType="touchUpInside" id="yZ6-Ge-O7e"/>
+                                            <outlet property="delegate" destination="IYa-mX-QFn" id="BjL-J4-vmc"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -68,10 +69,38 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EtD-NY-4Hx"/>
                     </view>
+                    <connections>
+                        <outlet property="feMaleLoginButton" destination="ZcQ-R6-hXn" id="qwz-qJ-i0c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oYy-xJ-rjx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6" y="86"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Jga-O5-GfY">
+            <objects>
+                <viewController id="eS7-I2-g5d" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4OA-77-5b8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2Z-SL-XhN">
+                                <rect key="frame" x="333" y="32" width="30" height="30"/>
+                                <state key="normal" title="X"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="P2Z-SL-XhN" firstAttribute="top" secondItem="Dhb-nC-pDg" secondAttribute="top" constant="12" id="HW7-am-7tC"/>
+                            <constraint firstItem="Dhb-nC-pDg" firstAttribute="trailing" secondItem="P2Z-SL-XhN" secondAttribute="trailing" constant="12" id="gng-Ry-80L"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Dhb-nC-pDg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FoR-wd-UNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="828" y="86"/>
         </scene>
     </scenes>
 </document>

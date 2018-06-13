@@ -67,6 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         return handled
     }
     
+    //初期起動画面変更
     func showRootViewControoler() {
         let storyboard:UIStoryboard = UIStoryboard(name: "Regist",bundle:nil)
         window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "RegistViewController")

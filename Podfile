@@ -8,7 +8,13 @@ target 'MilkeyMummy' do
   # Pods for MilkeyMummy
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Firestore'
   pod 'FBSDKLoginKit'
   pod 'SVProgressHUD'
+  pod 'Salada'
+  pod 'AlamofireImage'
+  pod 'TextFieldEffects'
 
 end
