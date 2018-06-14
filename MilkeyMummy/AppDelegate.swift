@@ -11,6 +11,7 @@ import CoreData
 import Firebase
 import FirebaseAuth
 import FBSDKCoreKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate{
@@ -19,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        //firebaseのplist読み込み
         var firebasePlistFileName = ""
         switch Environment.getFlaverType() {
         case Environment.FlaverType.develop:
@@ -32,7 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         }
         let options = FirebaseOptions.init(contentsOfFile: Bundle.main.path(forResource: firebasePlistFileName, ofType: "plist")!)
         FirebaseApp.configure(options: options!)
+        //facebooklogin
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        //IQKeyboardManager
+        IQKeyboardManager.shared.enable = true
         
         showRootViewControoler()
         return true
@@ -70,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     //初期起動画面変更
     func showRootViewControoler() {
         let storyboard:UIStoryboard = UIStoryboard(name: "Regist",bundle:nil)
-        window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "RegistViewController")
+        window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "RegistInfoViewController")
     }
 
     // MARK: - Core Data stack

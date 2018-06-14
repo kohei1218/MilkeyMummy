@@ -16,5 +16,7 @@ target 'MilkeyMummy' do
   pod 'Salada'
   pod 'AlamofireImage'
   pod 'TextFieldEffects'
+  pod 'IBAnimatable'
+  pod 'IQKeyboardManagerSwift'
 
 end
