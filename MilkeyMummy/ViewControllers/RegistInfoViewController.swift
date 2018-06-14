@@ -9,7 +9,7 @@
 import UIKit
 import TextFieldEffects
 
-class RegistInfoViewController: UIViewController, UIPickerViewDelegate {
+class RegistInfoViewController: UIViewController {
 
     @IBOutlet weak var nickNameTextField: KaedeTextField!
     @IBOutlet weak var emailTextField: KaedeTextField!
@@ -18,9 +18,15 @@ class RegistInfoViewController: UIViewController, UIPickerViewDelegate {
     @IBOutlet weak var birthDateTextField: KaedeTextField!
     @IBOutlet weak var locateTextField: KaedeTextField!
     
+    private let prefecturePickerView = UIPickerView()
+    private let prefectures = Const.kPrefectures
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.appColor()
+        prefecturePickerView.dataSource = self
+        prefecturePickerView.delegate = self
+        
         self.setTextField()
         // Do any additional setup after loading the view.
     }
@@ -71,10 +77,10 @@ class RegistInfoViewController: UIViewController, UIPickerViewDelegate {
     
     
     @IBAction func actionTouchLocateField(_ sender: Any) {
-        
+        locateTextField.text = "東京都"
+        locateTextField.inputView = prefecturePickerView
     }
     
-    //datepickerが選択されたらtextfieldに表示
     @objc func datePickerValueChange(sender:UIDatePicker) {
         birthDateTextField.text = getFormattedDateStr(date: sender.date)
     }
@@ -83,16 +89,27 @@ class RegistInfoViewController: UIViewController, UIPickerViewDelegate {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat  = "yyyy/MM/dd";
         return dateFormatter.string(from: date)
+        
+    }
+
+}
+
+extension RegistInfoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.prefectures.count
     }
-    */
-
+    
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.prefectures[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.locateTextField.text = self.prefectures[row]
+    }
+    
 }
