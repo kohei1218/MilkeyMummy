@@ -8,27 +8,40 @@
 
 import UIKit
 import TextFieldEffects
+import Firebase
+import Salada
+import SVProgressHUD
+import IBAnimatable
 
 class RegistInfoViewController: UIViewController {
 
     @IBOutlet weak var nickNameTextField: KaedeTextField!
     @IBOutlet weak var emailTextField: KaedeTextField!
-    @IBOutlet weak var passwordTextField: KaedeTextField!
-    @IBOutlet weak var confirmPasswordTextField: KaedeTextField!
     @IBOutlet weak var birthDateTextField: KaedeTextField!
     @IBOutlet weak var locateTextField: KaedeTextField!
+    @IBOutlet weak var positionTextField: KaedeTextField!
+    @IBOutlet weak var incomeTextField: KaedeTextField!
+    @IBOutlet weak var startButton: AnimatableButton!
     
     private let prefecturePickerView = UIPickerView()
     private let prefectures = Const.kPrefectures
+    private var user: FirebaseApp.User = FirebaseApp.User()
+    private var firebaseUser: FirebaseApp.User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        SVProgressHUD.show()
         self.view.backgroundColor = UIColor.appColor()
         prefecturePickerView.dataSource = self
         prefecturePickerView.delegate = self
+        startButton.isEnabled = false
         
         self.setTextField()
-        // Do any additional setup after loading the view.
+        FirebaseApp.User.current{ user in
+            SVProgressHUD.dismiss()
+            self.firebaseUser = user
+            self.emailTextField.text = self.firebaseUser?.email
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,30 +54,36 @@ class RegistInfoViewController: UIViewController {
         nickNameTextField.foregroundColor = UIColor.appColor()
         nickNameTextField.placeholderColor = UIColor.white
         nickNameTextField.placeholderFontScale = 1
+        
         emailTextField.backgroundColor =  UIColor(code: "#42A5F5")
         emailTextField.foregroundColor = UIColor.appColor()
         emailTextField.placeholderColor = UIColor.white
         emailTextField.placeholderFontScale = 1
-        passwordTextField.backgroundColor =  UIColor(code: "#42A5F5")
-        passwordTextField.foregroundColor = UIColor.appColor()
-        passwordTextField.placeholderColor = UIColor.white
-        passwordTextField.placeholderFontScale = 1
-        confirmPasswordTextField.backgroundColor =  UIColor(code: "#42A5F5")
-        confirmPasswordTextField.foregroundColor = UIColor.appColor()
-        confirmPasswordTextField.placeholderColor = UIColor.white
-        confirmPasswordTextField.placeholderFontScale = 1
+        
         birthDateTextField.backgroundColor =  UIColor(code: "#42A5F5")
         birthDateTextField.foregroundColor = UIColor.appColor()
         birthDateTextField.placeholderColor = UIColor.white
         birthDateTextField.placeholderFontScale = 1
+        
         locateTextField.backgroundColor =  UIColor(code: "#42A5F5")
         locateTextField.foregroundColor = UIColor.appColor()
         locateTextField.placeholderColor = UIColor.white
         locateTextField.placeholderFontScale = 1
+        
+        positionTextField.backgroundColor =  UIColor(code: "#42A5F5")
+        positionTextField.foregroundColor = UIColor.appColor()
+        positionTextField.placeholderColor = UIColor.white
+        positionTextField.placeholderFontScale = 1
+        
+        incomeTextField.backgroundColor =  UIColor(code: "#42A5F5")
+        incomeTextField.foregroundColor = UIColor.appColor()
+        incomeTextField.placeholderColor = UIColor.white
+        incomeTextField.placeholderFontScale = 1
     }
 
     @IBAction func actionTouchBirthDateField(_ sender: Any) {
         birthDateTextField.text = getFormattedDateStr(date: Date())
+        user.birth = Date()
         let datePicker = UIDatePicker()
         datePicker.locale = NSLocale(localeIdentifier: "ja_JP") as Locale
         datePicker.datePickerMode = .date
@@ -73,15 +92,18 @@ class RegistInfoViewController: UIViewController {
         datePicker.minimumDate = Calendar.current.date(byAdding: .year, value: -100, to: Calendar.current.startOfDay(for: Date()))
         
         birthDateTextField.inputView = datePicker
+        validationUser()
     }
     
     
     @IBAction func actionTouchLocateField(_ sender: Any) {
         locateTextField.text = "東京都"
         locateTextField.inputView = prefecturePickerView
+        validationUser()
     }
     
     @objc func datePickerValueChange(sender:UIDatePicker) {
+        user.birth = sender.date
         birthDateTextField.text = getFormattedDateStr(date: sender.date)
     }
     
@@ -90,6 +112,39 @@ class RegistInfoViewController: UIViewController {
         dateFormatter.dateFormat  = "yyyy/MM/dd";
         return dateFormatter.string(from: date)
         
+    }
+    
+    func validationUser() {
+        if user.nickName == nil {
+            setButtonState(bool: false)
+            return
+        }
+        if user.email == nil {
+            setButtonState(bool: false)
+            return
+        }
+        if user.birth == nil {
+            setButtonState(bool: false)
+            return
+        }
+        if user.position == nil {
+            setButtonState(bool: false)
+            return
+        }
+        if user.income == 0 {
+            setButtonState(bool: false)
+            return
+        }
+        setButtonState(bool: true)
+    }
+    
+    func setButtonState(bool: Bool) {
+        startButton.isEnabled = bool
+        if bool == true {
+            startButton.setTitleColor(UIColor.appColor(), for: .normal)
+        } else {
+            startButton.setTitleColor(UIColor(code: "#BBDEFB"), for: .normal)
+        }
     }
 
 }
@@ -103,7 +158,6 @@ extension RegistInfoViewController: UIPickerViewDelegate, UIPickerViewDataSource
         return self.prefectures.count
     }
     
-    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return self.prefectures[row]
     }
@@ -112,4 +166,32 @@ extension RegistInfoViewController: UIPickerViewDelegate, UIPickerViewDataSource
         self.locateTextField.text = self.prefectures[row]
     }
     
+}
+
+extension RegistInfoViewController: UITextFieldDelegate {
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        switch textField {
+        case nickNameTextField:
+            user.nickName = nickNameTextField.text
+            validationUser()
+            break
+        case emailTextField:
+            user.email = emailTextField.text
+            validationUser()
+            break
+        case positionTextField:
+            user.position = positionTextField.text
+            validationUser()
+            break
+        case incomeTextField:
+            if let text : String = incomeTextField.text {
+                user.income = Int(text)!
+                validationUser()
+            }
+            break
+        default:
+            break
+        }
+        return true
+    }
 }

@@ -113,6 +113,9 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eS7-I2-g5d" id="Nuz-zd-Igz"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aDO-mI-zwR" customClass="KaedeTextField" customModule="TextFieldEffects">
                                 <rect key="frame" x="20" y="182" width="335" height="48"/>
@@ -122,39 +125,36 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eS7-I2-g5d" id="Ebx-iA-EFi"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="パスワード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="get-R3-MIi" customClass="KaedeTextField" customModule="TextFieldEffects">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="生年月日" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="get-R3-MIi" customClass="KaedeTextField" customModule="TextFieldEffects">
                                 <rect key="frame" x="20" y="230" width="335" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="6EV-hG-1YD"/>
                                 </constraints>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="actionTouchBirthDateField:" destination="eS7-I2-g5d" eventType="editingDidBegin" id="qLH-hc-2hM"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="パスワード（確認用）" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cQb-ah-6Hr" customClass="KaedeTextField" customModule="TextFieldEffects">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="居住地" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cQb-ah-6Hr" customClass="KaedeTextField" customModule="TextFieldEffects">
                                 <rect key="frame" x="20" y="278" width="335" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="SHD-wO-2pn"/>
                                 </constraints>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="生年月日" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eJI-B3-pKi" customClass="KaedeTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="20" y="326" width="335" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="wEK-ap-EGd"/>
-                                </constraints>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="actionTouchBirthDateField:" destination="eS7-I2-g5d" eventType="editingDidBegin" id="SI8-Hk-MKO"/>
+                                    <action selector="actionTouchLocateField:" destination="eS7-I2-g5d" eventType="editingDidBegin" id="spR-uG-RkJ"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="居住地" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aLg-En-xb1" customClass="KaedeTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="20" y="374" width="335" height="48"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="役職" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aLg-En-xb1" customClass="KaedeTextField" customModule="TextFieldEffects">
+                                <rect key="frame" x="20" y="326" width="335" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="uze-fv-ANJ"/>
                                 </constraints>
@@ -162,46 +162,95 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="actionTouchLocateField:" destination="eS7-I2-g5d" eventType="editingDidBegin" id="jg6-nz-Ala"/>
+                                    <outlet property="delegate" destination="eS7-I2-g5d" id="Iz0-Zn-Ilj"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="利用規約とプライバシーポリシーに" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHy-nz-hbt">
+                                <rect key="frame" x="48.5" y="462" width="278" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="同意して登録する" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1s-zw-McH">
+                                <rect key="frame" x="118" y="487" width="139" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8QG-UF-0MY" customClass="AnimatableButton" customModule="IBAnimatable">
+                                <rect key="frame" x="20" y="548" width="335" height="48"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="sRY-VX-n5G"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="はじめる">
+                                    <color key="titleColor" red="0.90196078431372551" green="0.94901960784313721" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="年収" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OUa-2N-UNI" customClass="KaedeTextField" customModule="TextFieldEffects">
+                                <rect key="frame" x="20" y="374" width="335" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="fL6-3v-6Q8"/>
+                                </constraints>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eS7-I2-g5d" id="Zts-Jx-3Ih"/>
                                 </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.27058823529411763" green="0.58823529411764708" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cQb-ah-6Hr" firstAttribute="leading" secondItem="Dhb-nC-pDg" secondAttribute="leading" constant="20" id="0wX-C6-LJh"/>
-                            <constraint firstItem="eJI-B3-pKi" firstAttribute="leading" secondItem="Dhb-nC-pDg" secondAttribute="leading" constant="20" id="1sC-7d-EcW"/>
-                            <constraint firstItem="Dhb-nC-pDg" firstAttribute="trailing" secondItem="eJI-B3-pKi" secondAttribute="trailing" constant="20" id="49N-Iy-dpi"/>
+                            <constraint firstItem="aLg-En-xb1" firstAttribute="top" secondItem="cQb-ah-6Hr" secondAttribute="bottom" id="2Od-ek-HyU"/>
                             <constraint firstItem="Dhb-nC-pDg" firstAttribute="trailing" secondItem="get-R3-MIi" secondAttribute="trailing" constant="20" id="4l8-20-G4U"/>
                             <constraint firstItem="kbf-Vw-0aw" firstAttribute="leading" secondItem="Dhb-nC-pDg" secondAttribute="leading" constant="20" id="6o0-9I-yUh"/>
+                            <constraint firstItem="CHy-nz-hbt" firstAttribute="top" secondItem="OUa-2N-UNI" secondAttribute="bottom" constant="40" id="7ND-EW-l3I"/>
                             <constraint firstItem="get-R3-MIi" firstAttribute="top" secondItem="aDO-mI-zwR" secondAttribute="bottom" id="BXk-Pt-JUF"/>
                             <constraint firstItem="kbf-Vw-0aw" firstAttribute="top" secondItem="STS-Qs-RVB" secondAttribute="bottom" constant="40" id="C10-rh-Gtd"/>
+                            <constraint firstItem="Dhb-nC-pDg" firstAttribute="trailing" secondItem="OUa-2N-UNI" secondAttribute="trailing" constant="20" id="Cxx-Rd-6zB"/>
                             <constraint firstItem="STS-Qs-RVB" firstAttribute="centerX" secondItem="4OA-77-5b8" secondAttribute="centerX" id="ETI-dD-ggn"/>
                             <constraint firstItem="aLg-En-xb1" firstAttribute="leading" secondItem="Dhb-nC-pDg" secondAttribute="leading" constant="20" id="GzC-Ag-rcy"/>
                             <constraint firstItem="Dhb-nC-pDg" firstAttribute="trailing" secondItem="cQb-ah-6Hr" secondAttribute="trailing" constant="20" id="GzW-UC-a3p"/>
                             <constraint firstItem="P2Z-SL-XhN" firstAttribute="top" secondItem="Dhb-nC-pDg" secondAttribute="top" id="HW7-am-7tC"/>
+                            <constraint firstItem="g1s-zw-McH" firstAttribute="centerX" secondItem="4OA-77-5b8" secondAttribute="centerX" id="J4e-Lm-oDp"/>
+                            <constraint firstItem="8QG-UF-0MY" firstAttribute="top" secondItem="g1s-zw-McH" secondAttribute="bottom" constant="40" id="KQP-8B-KiV"/>
                             <constraint firstItem="wxV-gZ-DwS" firstAttribute="top" secondItem="Dhb-nC-pDg" secondAttribute="top" constant="28" id="LXt-6I-1bH"/>
                             <constraint firstItem="STS-Qs-RVB" firstAttribute="top" secondItem="wxV-gZ-DwS" secondAttribute="bottom" constant="4" id="MqK-Mr-PgO"/>
-                            <constraint firstItem="aLg-En-xb1" firstAttribute="top" secondItem="eJI-B3-pKi" secondAttribute="bottom" id="NMh-Nh-fI3"/>
                             <constraint firstItem="Dhb-nC-pDg" firstAttribute="trailing" secondItem="aDO-mI-zwR" secondAttribute="trailing" constant="20" id="NP6-jm-weT"/>
+                            <constraint firstItem="8QG-UF-0MY" firstAttribute="centerX" secondItem="4OA-77-5b8" secondAttribute="centerX" id="NPU-M1-OIi"/>
+                            <constraint firstItem="g1s-zw-McH" firstAttribute="top" secondItem="CHy-nz-hbt" secondAttribute="bottom" constant="4" id="Nna-if-a6y"/>
                             <constraint firstItem="Dhb-nC-pDg" firstAttribute="trailing" secondItem="kbf-Vw-0aw" secondAttribute="trailing" constant="20" id="P9X-p6-wHz"/>
+                            <constraint firstItem="OUa-2N-UNI" firstAttribute="leading" secondItem="Dhb-nC-pDg" secondAttribute="leading" constant="20" id="PYL-1D-Rjr"/>
+                            <constraint firstItem="CHy-nz-hbt" firstAttribute="centerX" secondItem="4OA-77-5b8" secondAttribute="centerX" id="XYh-Ee-Odi"/>
                             <constraint firstItem="aDO-mI-zwR" firstAttribute="top" secondItem="kbf-Vw-0aw" secondAttribute="bottom" id="Yp8-iJ-ICI"/>
                             <constraint firstItem="Dhb-nC-pDg" firstAttribute="trailing" secondItem="aLg-En-xb1" secondAttribute="trailing" constant="20" id="gOK-fA-XcK"/>
+                            <constraint firstItem="8QG-UF-0MY" firstAttribute="leading" secondItem="Dhb-nC-pDg" secondAttribute="leading" constant="20" id="gRF-6O-QFt"/>
                             <constraint firstItem="cQb-ah-6Hr" firstAttribute="top" secondItem="get-R3-MIi" secondAttribute="bottom" id="gZy-9x-Hhx"/>
                             <constraint firstItem="wxV-gZ-DwS" firstAttribute="centerX" secondItem="4OA-77-5b8" secondAttribute="centerX" id="gbl-hT-U6F"/>
                             <constraint firstItem="Dhb-nC-pDg" firstAttribute="trailing" secondItem="P2Z-SL-XhN" secondAttribute="trailing" constant="12" id="gng-Ry-80L"/>
                             <constraint firstItem="aDO-mI-zwR" firstAttribute="leading" secondItem="Dhb-nC-pDg" secondAttribute="leading" constant="20" id="mpT-5H-Ej2"/>
                             <constraint firstItem="get-R3-MIi" firstAttribute="leading" secondItem="Dhb-nC-pDg" secondAttribute="leading" constant="20" id="nFp-dU-Pij"/>
-                            <constraint firstItem="eJI-B3-pKi" firstAttribute="top" secondItem="cQb-ah-6Hr" secondAttribute="bottom" id="yR7-ir-94q"/>
+                            <constraint firstItem="OUa-2N-UNI" firstAttribute="top" secondItem="aLg-En-xb1" secondAttribute="bottom" id="qjD-vp-vXO"/>
+                            <constraint firstItem="Dhb-nC-pDg" firstAttribute="trailing" secondItem="8QG-UF-0MY" secondAttribute="trailing" constant="20" id="u8b-Yj-yTK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Dhb-nC-pDg"/>
                     </view>
                     <connections>
-                        <outlet property="birthDateTextField" destination="eJI-B3-pKi" id="ieU-6N-Xns"/>
-                        <outlet property="confirmPasswordTextField" destination="cQb-ah-6Hr" id="rgk-WO-JCg"/>
+                        <outlet property="birthDateTextField" destination="get-R3-MIi" id="lD3-5E-d2A"/>
                         <outlet property="emailTextField" destination="aDO-mI-zwR" id="smr-gb-TwC"/>
-                        <outlet property="locateTextField" destination="aLg-En-xb1" id="Qwx-Xs-E1v"/>
+                        <outlet property="incomeTextField" destination="OUa-2N-UNI" id="A4d-m8-duc"/>
+                        <outlet property="locateTextField" destination="cQb-ah-6Hr" id="z3c-se-0gx"/>
                         <outlet property="nickNameTextField" destination="kbf-Vw-0aw" id="ezA-YD-p2e"/>
-                        <outlet property="passwordTextField" destination="get-R3-MIi" id="29g-GI-d53"/>
+                        <outlet property="positionTextField" destination="aLg-En-xb1" id="7hR-EY-Ydv"/>
+                        <outlet property="startButton" destination="8QG-UF-0MY" id="pEm-t8-SbT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FoR-wd-UNg" userLabel="First Responder" sceneMemberID="firstResponder"/>

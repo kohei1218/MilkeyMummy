@@ -14,15 +14,14 @@ extension FirebaseApp {
     class User: Object {
         @objc dynamic var name: String?
         @objc dynamic var email: String?
+        @objc dynamic var nickName: String?
         @objc dynamic var age: Int = 0
         @objc dynamic var gender: String?
         @objc dynamic var groups: Set<String> = []
         @objc dynamic var url: String?
         @objc dynamic var birth: Date?
         @objc dynamic var thumbnail: File?
-        @objc dynamic var lowIncome: Int = 0
-        @objc dynamic var highIncome: Int = 0
-        @objc dynamic var work: String?
+        @objc dynamic var income: Int = 0
         @objc dynamic var position: String?
         @objc dynamic var residence: String?
         @objc dynamic var seeDesire: String?
