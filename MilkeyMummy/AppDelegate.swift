@@ -9,14 +9,18 @@
 import UIKit
 import CoreData
 import Firebase
+import FirebaseAuth
+import FBSDKCoreKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate{
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        //firebaseのplist読み込み
         var firebasePlistFileName = ""
         switch Environment.getFlaverType() {
         case Environment.FlaverType.develop:
@@ -30,6 +34,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         let options = FirebaseOptions.init(contentsOfFile: Bundle.main.path(forResource: firebasePlistFileName, ofType: "plist")!)
         FirebaseApp.configure(options: options!)
+        //facebooklogin
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        //IQKeyboardManager
+        IQKeyboardManager.shared.enable = true
+        
+        showRootViewControoler()
         return true
     }
 
@@ -55,6 +65,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+    }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        let handled = FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: application)
+        return handled
+    }
+    
+    //初期起動画面変更
+    func showRootViewControoler() {
+        FirebaseApp.User.current { user in
+            if user == nil {
+                let storyboard:UIStoryboard = UIStoryboard(name: "Regist",bundle:nil)
+                self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "RegistViewController")
+            } else {
+                if user?.nickName == nil {
+                    let storyboard:UIStoryboard = UIStoryboard(name: "Regist",bundle:nil)
+                    self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "RegistInfoViewController")
+                } else {
+                    //登録後の処理
+                    let storyboard:UIStoryboard = UIStoryboard(name: "Regist",bundle:nil)
+                    self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "RegistInfoViewController")
+                }
+            }
+        }
     }
 
     // MARK: - Core Data stack

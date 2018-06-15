@@ -18,6 +18,12 @@
 		552B815C20CE88A700E8C71A /* GoogleService-Info-develop-release.plist in Resources */ = {isa = PBXBuildFile; fileRef = 552B815A20CE88A700E8C71A /* GoogleService-Info-develop-release.plist */; };
 		552B815E20CE92F800E8C71A /* Regist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 552B815D20CE92F800E8C71A /* Regist.storyboard */; };
 		552B816020CE969500E8C71A /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B815F20CE969500E8C71A /* RegistViewController.swift */; };
+		55370C6E20CFBC8D00032B82 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55370C6D20CFBC8D00032B82 /* User.swift */; };
+		55370C7020CFC9BB00032B82 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55370C6F20CFC9BB00032B82 /* Group.swift */; };
+		5556813F20D253670030B90F /* UIColor+exstension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5556813E20D253670030B90F /* UIColor+exstension.swift */; };
+		5556814620D297740030B90F /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5556814520D297740030B90F /* Const.swift */; };
+		559F1BB720D1011500939E95 /* UIImageView+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559F1BB620D1011500939E95 /* UIImageView+AlamofireImage.swift */; };
+		559F1BB920D10BDA00939E95 /* RegistInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559F1BB820D10BDA00939E95 /* RegistInfoViewController.swift */; };
 		7CE6795270B2146E097D4E24 /* Pods_MilkeyMummy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3955F4ABC00D016156AE482 /* Pods_MilkeyMummy.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +41,12 @@
 		552B815A20CE88A700E8C71A /* GoogleService-Info-develop-release.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-develop-release.plist"; sourceTree = "<group>"; };
 		552B815D20CE92F800E8C71A /* Regist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Regist.storyboard; sourceTree = "<group>"; };
 		552B815F20CE969500E8C71A /* RegistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
+		55370C6D20CFBC8D00032B82 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		55370C6F20CFC9BB00032B82 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		5556813E20D253670030B90F /* UIColor+exstension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+exstension.swift"; sourceTree = "<group>"; };
+		5556814520D297740030B90F /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		559F1BB620D1011500939E95 /* UIImageView+AlamofireImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+AlamofireImage.swift"; sourceTree = "<group>"; };
+		559F1BB820D10BDA00939E95 /* RegistInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistInfoViewController.swift; sourceTree = "<group>"; };
 		C4744C64275D79667383646D /* Pods-MilkeyMummy.develop_release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkeyMummy.develop_release.xcconfig"; path = "Pods/Target Support Files/Pods-MilkeyMummy/Pods-MilkeyMummy.develop_release.xcconfig"; sourceTree = "<group>"; };
 		D3955F4ABC00D016156AE482 /* Pods_MilkeyMummy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MilkeyMummy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D88755DE3B5F3BB9F564E57C /* Pods-MilkeyMummy.staging_debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkeyMummy.staging_debug.xcconfig"; path = "Pods/Target Support Files/Pods-MilkeyMummy/Pods-MilkeyMummy.staging_debug.xcconfig"; sourceTree = "<group>"; };
@@ -92,6 +104,8 @@
 			children = (
 				552B813120CE3F1A00E8C71A /* AppDelegate.swift */,
 				552B815620CE85F900E8C71A /* ViewControllers */,
+				55370C6A20CFBBC400032B82 /* Model */,
+				559F1BB520D100DE00939E95 /* Extension */,
 				552B815720CE862500E8C71A /* Storyboards */,
 				552B815520CE85E200E8C71A /* GooglePlists */,
 				552B815820CE864500E8C71A /* Helpers */,
@@ -117,6 +131,7 @@
 			children = (
 				552B813320CE3F1A00E8C71A /* ViewController.swift */,
 				552B815F20CE969500E8C71A /* RegistViewController.swift */,
+				559F1BB820D10BDA00939E95 /* RegistInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -134,8 +149,27 @@
 			isa = PBXGroup;
 			children = (
 				552B815220CE431E00E8C71A /* Environment.swift */,
+				5556814520D297740030B90F /* Const.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		55370C6A20CFBBC400032B82 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				55370C6D20CFBC8D00032B82 /* User.swift */,
+				55370C6F20CFC9BB00032B82 /* Group.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		559F1BB520D100DE00939E95 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				559F1BB620D1011500939E95 /* UIImageView+AlamofireImage.swift */,
+				5556813E20D253670030B90F /* UIColor+exstension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		CAA28954140B6A88E55FE2E5 /* Frameworks */ = {
@@ -158,7 +192,6 @@
 				552B812B20CE3F1A00E8C71A /* Frameworks */,
 				552B812C20CE3F1A00E8C71A /* Resources */,
 				998BA2C25233BD2A87A46A12 /* [CP] Embed Pods Frameworks */,
-				B2DC5371E04AADF0673E21C2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -225,28 +258,52 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MilkeyMummy/Pods-MilkeyMummy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IBAnimatable/IBAnimatable.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBAnimatable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MilkeyMummy/Pods-MilkeyMummy-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B2DC5371E04AADF0673E21C2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MilkeyMummy/Pods-MilkeyMummy-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EC82F4A18EBA25CA40569C1C /* [CP] Check Pods Manifest.lock */ = {
@@ -255,13 +312,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MilkeyMummy-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -271,11 +331,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55370C7020CFC9BB00032B82 /* Group.swift in Sources */,
+				5556813F20D253670030B90F /* UIColor+exstension.swift in Sources */,
 				552B816020CE969500E8C71A /* RegistViewController.swift in Sources */,
+				559F1BB720D1011500939E95 /* UIImageView+AlamofireImage.swift in Sources */,
+				559F1BB920D10BDA00939E95 /* RegistInfoViewController.swift in Sources */,
 				552B813420CE3F1A00E8C71A /* ViewController.swift in Sources */,
+				55370C6E20CFBC8D00032B82 /* User.swift in Sources */,
 				552B815320CE431E00E8C71A /* Environment.swift in Sources */,
 				552B813220CE3F1A00E8C71A /* AppDelegate.swift in Sources */,
 				552B813A20CE3F1A00E8C71A /* MilkeyMummy.xcdatamodeld in Sources */,
+				5556814620D297740030B90F /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
