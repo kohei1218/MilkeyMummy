@@ -31,7 +31,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="ZcQ-R6-hXn" firstAttribute="centerX" secondItem="ZrQ-Fh-RRK" secondAttribute="centerX" id="0vc-fJ-0Jd"/>
                                     <constraint firstItem="ZcQ-R6-hXn" firstAttribute="centerY" secondItem="ZrQ-Fh-RRK" secondAttribute="centerY" id="Oro-nR-bkU"/>
@@ -49,7 +49,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="Gib-EC-RbI" firstAttribute="centerY" secondItem="6or-MF-6LJ" secondAttribute="centerY" id="2tB-AF-57M"/>
                                     <constraint firstItem="Gib-EC-RbI" firstAttribute="centerX" secondItem="6or-MF-6LJ" secondAttribute="centerX" id="Ybn-6N-YLR"/>
@@ -192,6 +192,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="actionStartButton:" destination="eS7-I2-g5d" eventType="touchUpInside" id="dIZ-1T-UYc"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="年収" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OUa-2N-UNI" customClass="KaedeTextField" customModule="TextFieldEffects">
                                 <rect key="frame" x="20" y="374" width="335" height="48"/>

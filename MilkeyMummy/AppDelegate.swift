@@ -74,8 +74,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     
     //初期起動画面変更
     func showRootViewControoler() {
-        let storyboard:UIStoryboard = UIStoryboard(name: "Regist",bundle:nil)
-        window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "RegistInfoViewController")
+        FirebaseApp.User.current { user in
+            if user == nil {
+                let storyboard:UIStoryboard = UIStoryboard(name: "Regist",bundle:nil)
+                self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "RegistViewController")
+            } else {
+                if user?.nickName == nil {
+                    let storyboard:UIStoryboard = UIStoryboard(name: "Regist",bundle:nil)
+                    self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "RegistInfoViewController")
+                } else {
+                    //登録後の処理
+                    let storyboard:UIStoryboard = UIStoryboard(name: "Regist",bundle:nil)
+                    self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "RegistInfoViewController")
+                }
+            }
+        }
     }
 
     // MARK: - Core Data stack

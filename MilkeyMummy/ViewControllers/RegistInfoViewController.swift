@@ -27,6 +27,7 @@ class RegistInfoViewController: UIViewController {
     private let prefectures = Const.kPrefectures
     private var user: FirebaseApp.User = FirebaseApp.User()
     private var firebaseUser: FirebaseApp.User?
+    private var ref: DatabaseReference = Database.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,6 +99,7 @@ class RegistInfoViewController: UIViewController {
     
     @IBAction func actionTouchLocateField(_ sender: Any) {
         locateTextField.text = "東京都"
+        user.residence = "東京都"
         locateTextField.inputView = prefecturePickerView
         validationUser()
     }
@@ -114,6 +116,16 @@ class RegistInfoViewController: UIViewController {
         
     }
     
+    @IBAction func actionStartButton(_ sender: Any) {
+        SVProgressHUD.show()
+        firebaseUser?.nickName = user.nickName
+        firebaseUser?.email = user.email
+        firebaseUser?.birth = user.birth
+        firebaseUser?.residence = user.residence
+        firebaseUser?.position = user.position
+        firebaseUser?.income = user.income
+    }
+    
     func validationUser() {
         if user.nickName == nil || (user.nickName?.isEmpty)! {
             setButtonState(bool: false)
@@ -124,6 +136,10 @@ class RegistInfoViewController: UIViewController {
             return
         }
         if user.birth == nil {
+            setButtonState(bool: false)
+            return
+        }
+        if user.residence == nil || (user.residence?.isEmpty)! {
             setButtonState(bool: false)
             return
         }
@@ -163,6 +179,7 @@ extension RegistInfoViewController: UIPickerViewDelegate, UIPickerViewDataSource
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        user.residence = self.prefectures[row]
         self.locateTextField.text = self.prefectures[row]
     }
     
