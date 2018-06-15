@@ -115,11 +115,11 @@ class RegistInfoViewController: UIViewController {
     }
     
     func validationUser() {
-        if user.nickName == nil {
+        if user.nickName == nil || (user.nickName?.isEmpty)! {
             setButtonState(bool: false)
             return
         }
-        if user.email == nil {
+        if user.email == nil || (user.email?.isEmpty)! {
             setButtonState(bool: false)
             return
         }
@@ -127,7 +127,7 @@ class RegistInfoViewController: UIViewController {
             setButtonState(bool: false)
             return
         }
-        if user.position == nil {
+        if user.position == nil || (user.position?.isEmpty)! {
             setButtonState(bool: false)
             return
         }
@@ -184,8 +184,11 @@ extension RegistInfoViewController: UITextFieldDelegate {
             validationUser()
             break
         case incomeTextField:
-            if let text : String = incomeTextField.text {
-                user.income = Int(text)!
+            if !(incomeTextField.text?.isEmpty)! {
+                user.income = Int(incomeTextField.text!)!
+                validationUser()
+            } else {
+                user.income = 0
                 validationUser()
             }
             break
