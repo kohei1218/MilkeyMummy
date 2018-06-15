@@ -10,6 +10,8 @@ import UIKit
 import FBSDKLoginKit
 import Firebase
 import Salada
+import AlamofireImage
+import Alamofire
 
 class RegistViewController: UIViewController {
     
@@ -92,13 +94,21 @@ extension RegistViewController: FBSDKLoginButtonDelegate {
                 user.gender = self.isMale ? "male" : "female"
                 user.groups.insert((ref?.key)!)
                 if let urlStr: String = dictionary.value(forKeyPath: "picture.data.url") as? String {
-                    user.thumbnail = File(url: URL(string: urlStr)!)
+                    Alamofire.request(urlStr).responseData { response in
+                        if let response = response.result.value {
+                            user.thumbnail = File(data: response, mimeType: .jpeg)
+                            user.save()
+                            user.save({ (ref, error) in
+                                group.users.insert((ref?.key)!)
+                            })
+                        } else {
+                            user.save()
+                            user.save({ (ref, error) in
+                                group.users.insert((ref?.key)!)
+                            })
+                        }
+                    }
                 }
-                user.save()
-                user.save({ (ref, error) in
-                    group.users.insert((ref?.key)!)
-                    
-                })
             }
         }
     }
