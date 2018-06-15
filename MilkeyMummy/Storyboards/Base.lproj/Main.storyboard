@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bN9-u1-wbw">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,8 +23,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="134" y="125"/>
         </scene>
-        <!--Item 2-->
+        <!--いいね-->
         <scene sceneID="SnZ-sW-fyO">
             <objects>
                 <viewController id="W7g-dB-adO" sceneMemberID="viewController">
@@ -34,13 +35,27 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="aKu-NR-zo0"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="br3-nS-rOA"/>
+                    <tabBarItem key="tabBarItem" title="いいね" image="tab-heart" id="br3-nS-rOA" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="fuO-Wu-hCH" id="9la-er-pyy"/>
+                        </connections>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TQo-lu-7S0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="fuO-Wu-hCH" customClass="RAMRightRotationAnimation" customModule="RAMAnimatedTabBarController">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
+                            <color key="value" red="0.34509803919999998" green="0.58823529409999997" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="iconSelectedColor">
+                            <color key="value" red="0.34509803919999998" green="0.58823529409999997" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1916" y="24"/>
         </scene>
-        <!--Item-->
+        <!--メール-->
         <scene sceneID="EvS-jU-w9C">
             <objects>
                 <viewController id="uB9-0C-U0H" sceneMemberID="viewController">
@@ -50,13 +65,27 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="kdY-51-4ew"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="EZS-t1-HnG"/>
+                    <tabBarItem key="tabBarItem" title="メール" image="tab-mail" id="EZS-t1-HnG" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="1He-za-d9A" id="cAB-0W-6U1"/>
+                        </connections>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9lM-p1-SMH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="1He-za-d9A" customClass="RAMFlipRightTransitionItemAnimations" customModule="RAMAnimatedTabBarController">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
+                            <color key="value" red="0.34509803919999998" green="0.58823529409999997" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="iconSelectedColor">
+                            <color key="value" red="0.34509803919999998" green="0.58823529409999997" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1916" y="870"/>
         </scene>
-        <!--Item-->
+        <!--プロフィール-->
         <scene sceneID="KQ0-sH-0m1">
             <objects>
                 <viewController id="NOG-tH-H3V" sceneMemberID="viewController">
@@ -66,13 +95,27 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="UEs-ZQ-s1e"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="70R-N9-CeT"/>
+                    <tabBarItem key="tabBarItem" title="プロフィール" image="tab-profile" id="70R-N9-CeT" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="5YD-3W-xmR" id="eUd-RQ-vK1"/>
+                        </connections>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12j-W8-c6o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="5YD-3W-xmR" customClass="RAMFlipTopTransitionItemAnimations" customModule="RAMAnimatedTabBarController">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
+                            <color key="value" red="0.34509803919999998" green="0.58823529409999997" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="iconSelectedColor">
+                            <color key="value" red="0.34509803919999998" green="0.58823529409999997" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1916" y="1625"/>
         </scene>
-        <!--Item 1-->
+        <!--タイムライン-->
         <scene sceneID="i0Z-O3-EY6">
             <objects>
                 <viewController id="ikL-Gc-p13" sceneMemberID="viewController">
@@ -82,16 +125,30 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="H6f-Vw-Rpx"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="Irz-3M-e1G"/>
+                    <tabBarItem key="tabBarItem" title="タイムライン" image="tab-timeline" id="Irz-3M-e1G" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="A5z-RJ-nzz" id="b38-8T-QUJ"/>
+                        </connections>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HNC-WU-yEH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="A5z-RJ-nzz" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
+                            <color key="value" red="0.34509803919999998" green="0.58823529409999997" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="iconSelectedColor">
+                            <color key="value" red="0.34509803919999998" green="0.58823529409999997" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1916" y="-721"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Animated Tab Bar Controller-->
         <scene sceneID="0Ec-N2-Jdr">
             <objects>
-                <tabBarController id="bN9-u1-wbw" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabViewController" id="bN9-u1-wbw" customClass="RAMAnimatedTabBarController" customModule="RAMAnimatedTabBarController" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DWN-vL-VTh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -109,4 +166,10 @@
             <point key="canvasLocation" x="962" y="126"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tab-heart" width="37" height="37"/>
+        <image name="tab-mail" width="37" height="37"/>
+        <image name="tab-profile" width="37" height="37"/>
+        <image name="tab-timeline" width="37" height="37"/>
+    </resources>
 </document>
