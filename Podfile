@@ -5,7 +5,6 @@ target 'MilkeyMummy' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for MilkeyMummy
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
@@ -20,5 +19,7 @@ target 'MilkeyMummy' do
   pod 'IQKeyboardManagerSwift'
   pod 'RAMAnimatedTabBarController'
   pod 'MIBlurPopup'
+
+  # Pods for MilkeyMummy
 
 end
