@@ -18,5 +18,7 @@ target 'MilkeyMummy' do
   pod 'TextFieldEffects'
   pod 'IBAnimatable'
   pod 'IQKeyboardManagerSwift'
+  pod 'RAMAnimatedTabBarController'
+  pod 'MIBlurPopup'
 
 end
