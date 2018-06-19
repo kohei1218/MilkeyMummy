@@ -73,7 +73,7 @@
             </objects>
             <point key="canvasLocation" x="2855.1999999999998" y="1624.1379310344828"/>
         </scene>
-        <!--Time Line View Controller-->
+        <!--タイムライン-->
         <scene sceneID="i0Z-O3-EY6">
             <objects>
                 <viewController id="ikL-Gc-p13" customClass="TimeLineViewController" customModule="MilkeyMummy" customModuleProvider="target" sceneMemberID="viewController">
@@ -96,9 +96,22 @@
                                     <outlet property="delegate" destination="ikL-Gc-p13" id="Jyw-aX-37r"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFL-8O-Jcm" customClass="AnimatableButton" customModule="IBAnimatable">
+                                <rect key="frame" x="287" y="526" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="YjM-vR-PUb"/>
+                                    <constraint firstAttribute="height" constant="60" id="hjW-FQ-IlB"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="post-button"/>
+                                <connections>
+                                    <segue destination="nOR-k3-6cG" kind="presentation" id="mui-T1-c5j"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="H6f-Vw-Rpx" firstAttribute="trailing" secondItem="SFL-8O-Jcm" secondAttribute="trailing" constant="28" id="5It-a8-WyO"/>
+                            <constraint firstItem="H6f-Vw-Rpx" firstAttribute="bottom" secondItem="SFL-8O-Jcm" secondAttribute="bottom" constant="32" id="B82-fp-U3S"/>
                             <constraint firstItem="p06-J8-IFL" firstAttribute="top" secondItem="H6f-Vw-Rpx" secondAttribute="top" id="CaF-p2-gRj"/>
                             <constraint firstItem="p06-J8-IFL" firstAttribute="leading" secondItem="H6f-Vw-Rpx" secondAttribute="leading" id="FC7-4a-RD5"/>
                             <constraint firstItem="H6f-Vw-Rpx" firstAttribute="trailing" secondItem="p06-J8-IFL" secondAttribute="trailing" id="JqH-vc-pQJ"/>
@@ -106,7 +119,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="H6f-Vw-Rpx"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Y66-Vf-EDo"/>
+                    <navigationItem key="navigationItem" title="タイムライン" id="Y66-Vf-EDo"/>
                     <connections>
                         <outlet property="collectionView" destination="p06-J8-IFL" id="tPM-dl-fCL"/>
                     </connections>
@@ -114,6 +127,82 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HNC-WU-yEH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2855.1999999999998" y="-721.88905547226398"/>
+        </scene>
+        <!--Post Mutter View Controller-->
+        <scene sceneID="8w1-zD-KQj">
+            <objects>
+                <viewController id="nOR-k3-6cG" customClass="PostMutterViewController" customModule="MilkeyMummy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FJk-Oy-I2z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocL-3F-MeS">
+                                <rect key="frame" x="153" y="52" width="69.5" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ex.素敵な時間を過ごしましょう！" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Waz-Ff-FhD" customClass="MadokaTextField" customModule="TextFieldEffects">
+                                <rect key="frame" x="16" y="93" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="M19-0k-lhq"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="nOR-k3-6cG" id="eC4-CB-b3r"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bbe-vO-eaV" customClass="AnimatableButton" customModule="IBAnimatable">
+                                <rect key="frame" x="164" y="174" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="8rD-eA-Ohd"/>
+                                </constraints>
+                                <state key="normal" title="つぶやく">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="actionPostMutter:" destination="nOR-k3-6cG" eventType="touchUpInside" id="ofP-wA-LxL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="km7-vK-zvm">
+                                <rect key="frame" x="318" y="40" width="37" height="37"/>
+                                <state key="normal" image="close-appcolor"/>
+                                <connections>
+                                    <action selector="actionCloseView:" destination="nOR-k3-6cG" eventType="touchUpInside" id="zMp-Kf-HJk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ocL-3F-MeS" firstAttribute="centerX" secondItem="FJk-Oy-I2z" secondAttribute="centerX" id="43R-5N-iK4"/>
+                            <constraint firstItem="ocL-3F-MeS" firstAttribute="top" secondItem="rHh-gR-op0" secondAttribute="top" constant="32" id="Cfe-dp-bCV"/>
+                            <constraint firstItem="Waz-Ff-FhD" firstAttribute="leading" secondItem="rHh-gR-op0" secondAttribute="leading" constant="16" id="Dco-LN-hhh"/>
+                            <constraint firstItem="Waz-Ff-FhD" firstAttribute="top" secondItem="ocL-3F-MeS" secondAttribute="bottom" constant="20" id="GJg-Rb-bJW"/>
+                            <constraint firstItem="rHh-gR-op0" firstAttribute="trailing" secondItem="Waz-Ff-FhD" secondAttribute="trailing" constant="16" id="HZq-ke-Hbe"/>
+                            <constraint firstItem="Bbe-vO-eaV" firstAttribute="leading" secondItem="rHh-gR-op0" secondAttribute="leading" constant="20" id="J7f-2V-vYt"/>
+                            <constraint firstItem="rHh-gR-op0" firstAttribute="trailing" secondItem="Bbe-vO-eaV" secondAttribute="trailing" constant="20" id="NaM-pO-dxZ"/>
+                            <constraint firstItem="Bbe-vO-eaV" firstAttribute="top" secondItem="Waz-Ff-FhD" secondAttribute="bottom" constant="40" id="iFR-eE-CRq"/>
+                            <constraint firstItem="km7-vK-zvm" firstAttribute="top" secondItem="rHh-gR-op0" secondAttribute="top" constant="16" id="mSE-9e-Jes"/>
+                            <constraint firstItem="rHh-gR-op0" firstAttribute="trailing" secondItem="km7-vK-zvm" secondAttribute="trailing" constant="20" id="sG0-DS-cGE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rHh-gR-op0"/>
+                    </view>
+                    <connections>
+                        <outlet property="postMutterButton" destination="Bbe-vO-eaV" id="OSk-AJ-yFL"/>
+                        <outlet property="postMutterTextView" destination="Waz-Ff-FhD" id="Pxs-A4-fDm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LeJ-wg-wzX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3666.4000000000001" y="-722.78860569715152"/>
         </scene>
         <!--Animated Tab Bar Controller-->
         <scene sceneID="0Ec-N2-Jdr">
@@ -269,6 +358,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="close-appcolor" width="37" height="37"/>
+        <image name="post-button" width="37" height="37"/>
         <image name="tab-heart" width="37" height="37"/>
         <image name="tab-mail" width="37" height="37"/>
         <image name="tab-profile" width="37" height="37"/>
