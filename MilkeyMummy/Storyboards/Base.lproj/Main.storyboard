@@ -23,6 +23,346 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="134" y="125"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="SnZ-sW-fyO">
+            <objects>
+                <viewController id="W7g-dB-adO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cfx-Pw-xea">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="aKu-NR-zo0"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="aTB-Af-mMW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TQo-lu-7S0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2855.1999999999998" y="23.838080959520241"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="EvS-jU-w9C">
+            <objects>
+                <viewController id="uB9-0C-U0H" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lw8-7f-Br3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="kdY-51-4ew"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cbR-oV-Xsh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9lM-p1-SMH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2855.1999999999998" y="869.41529235382313"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="KQ0-sH-0m1">
+            <objects>
+                <viewController id="NOG-tH-H3V" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sds-th-Tyc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="UEs-ZQ-s1e"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lQD-t1-2GN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="12j-W8-c6o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2855.1999999999998" y="1624.1379310344828"/>
+        </scene>
+        <!--タイムライン-->
+        <scene sceneID="i0Z-O3-EY6">
+            <objects>
+                <viewController id="ikL-Gc-p13" customClass="TimeLineViewController" customModule="MilkeyMummy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rwl-6F-v3M">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="p06-J8-IFL">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="tNv-76-fx6">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ikL-Gc-p13" id="tff-Sf-lQB"/>
+                                    <outlet property="delegate" destination="ikL-Gc-p13" id="Jyw-aX-37r"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFL-8O-Jcm" customClass="AnimatableButton" customModule="IBAnimatable">
+                                <rect key="frame" x="287" y="526" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="YjM-vR-PUb"/>
+                                    <constraint firstAttribute="height" constant="60" id="hjW-FQ-IlB"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="post-button"/>
+                                <connections>
+                                    <segue destination="nOR-k3-6cG" kind="presentation" id="mui-T1-c5j"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="H6f-Vw-Rpx" firstAttribute="trailing" secondItem="SFL-8O-Jcm" secondAttribute="trailing" constant="28" id="5It-a8-WyO"/>
+                            <constraint firstItem="H6f-Vw-Rpx" firstAttribute="bottom" secondItem="SFL-8O-Jcm" secondAttribute="bottom" constant="32" id="B82-fp-U3S"/>
+                            <constraint firstItem="p06-J8-IFL" firstAttribute="top" secondItem="H6f-Vw-Rpx" secondAttribute="top" id="CaF-p2-gRj"/>
+                            <constraint firstItem="p06-J8-IFL" firstAttribute="leading" secondItem="H6f-Vw-Rpx" secondAttribute="leading" id="FC7-4a-RD5"/>
+                            <constraint firstItem="H6f-Vw-Rpx" firstAttribute="trailing" secondItem="p06-J8-IFL" secondAttribute="trailing" id="JqH-vc-pQJ"/>
+                            <constraint firstItem="H6f-Vw-Rpx" firstAttribute="bottom" secondItem="p06-J8-IFL" secondAttribute="bottom" id="zge-le-38I"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="H6f-Vw-Rpx"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="タイムライン" id="Y66-Vf-EDo"/>
+                    <connections>
+                        <outlet property="collectionView" destination="p06-J8-IFL" id="tPM-dl-fCL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HNC-WU-yEH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2855.1999999999998" y="-721.88905547226398"/>
+        </scene>
+        <!--Post Mutter View Controller-->
+        <scene sceneID="8w1-zD-KQj">
+            <objects>
+                <viewController id="nOR-k3-6cG" customClass="PostMutterViewController" customModule="MilkeyMummy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FJk-Oy-I2z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocL-3F-MeS">
+                                <rect key="frame" x="153" y="52" width="69.5" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ex.素敵な時間を過ごしましょう！" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Waz-Ff-FhD" customClass="MadokaTextField" customModule="TextFieldEffects">
+                                <rect key="frame" x="16" y="93" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="M19-0k-lhq"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="nOR-k3-6cG" id="eC4-CB-b3r"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bbe-vO-eaV" customClass="AnimatableButton" customModule="IBAnimatable">
+                                <rect key="frame" x="164" y="174" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="8rD-eA-Ohd"/>
+                                </constraints>
+                                <state key="normal" title="つぶやく">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="actionPostMutter:" destination="nOR-k3-6cG" eventType="touchUpInside" id="ofP-wA-LxL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="km7-vK-zvm">
+                                <rect key="frame" x="318" y="40" width="37" height="37"/>
+                                <state key="normal" image="close-appcolor"/>
+                                <connections>
+                                    <action selector="actionCloseView:" destination="nOR-k3-6cG" eventType="touchUpInside" id="zMp-Kf-HJk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ocL-3F-MeS" firstAttribute="centerX" secondItem="FJk-Oy-I2z" secondAttribute="centerX" id="43R-5N-iK4"/>
+                            <constraint firstItem="ocL-3F-MeS" firstAttribute="top" secondItem="rHh-gR-op0" secondAttribute="top" constant="32" id="Cfe-dp-bCV"/>
+                            <constraint firstItem="Waz-Ff-FhD" firstAttribute="leading" secondItem="rHh-gR-op0" secondAttribute="leading" constant="16" id="Dco-LN-hhh"/>
+                            <constraint firstItem="Waz-Ff-FhD" firstAttribute="top" secondItem="ocL-3F-MeS" secondAttribute="bottom" constant="20" id="GJg-Rb-bJW"/>
+                            <constraint firstItem="rHh-gR-op0" firstAttribute="trailing" secondItem="Waz-Ff-FhD" secondAttribute="trailing" constant="16" id="HZq-ke-Hbe"/>
+                            <constraint firstItem="Bbe-vO-eaV" firstAttribute="leading" secondItem="rHh-gR-op0" secondAttribute="leading" constant="20" id="J7f-2V-vYt"/>
+                            <constraint firstItem="rHh-gR-op0" firstAttribute="trailing" secondItem="Bbe-vO-eaV" secondAttribute="trailing" constant="20" id="NaM-pO-dxZ"/>
+                            <constraint firstItem="Bbe-vO-eaV" firstAttribute="top" secondItem="Waz-Ff-FhD" secondAttribute="bottom" constant="40" id="iFR-eE-CRq"/>
+                            <constraint firstItem="km7-vK-zvm" firstAttribute="top" secondItem="rHh-gR-op0" secondAttribute="top" constant="16" id="mSE-9e-Jes"/>
+                            <constraint firstItem="rHh-gR-op0" firstAttribute="trailing" secondItem="km7-vK-zvm" secondAttribute="trailing" constant="20" id="sG0-DS-cGE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rHh-gR-op0"/>
+                    </view>
+                    <connections>
+                        <outlet property="postMutterButton" destination="Bbe-vO-eaV" id="OSk-AJ-yFL"/>
+                        <outlet property="postMutterTextView" destination="Waz-Ff-FhD" id="Pxs-A4-fDm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LeJ-wg-wzX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3666.4000000000001" y="-722.78860569715152"/>
+        </scene>
+        <!--Animated Tab Bar Controller-->
+        <scene sceneID="0Ec-N2-Jdr">
+            <objects>
+                <tabBarController storyboardIdentifier="MainTabViewController" id="bN9-u1-wbw" customClass="RAMAnimatedTabBarController" customModule="RAMAnimatedTabBarController" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DWN-vL-VTh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="r4X-Zv-VfI" kind="relationship" relationship="viewControllers" id="228-v1-uP6"/>
+                        <segue destination="LKk-ih-alM" kind="relationship" relationship="viewControllers" id="pYZ-vU-GnQ"/>
+                        <segue destination="jlN-4o-4Eb" kind="relationship" relationship="viewControllers" id="mNL-bm-EeF"/>
+                        <segue destination="AhS-MG-I3d" kind="relationship" relationship="viewControllers" id="h0U-MX-422"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p6O-90-Z0P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="962" y="126"/>
+        </scene>
+        <!--タイムライン-->
+        <scene sceneID="yFs-OK-n5Z">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="r4X-Zv-VfI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="タイムライン" image="tab-timeline" id="Irz-3M-e1G" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="71Y-Er-rks" id="2Cp-Ag-yWw"/>
+                        </connections>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GF0-xB-tZo">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ikL-Gc-p13" kind="relationship" relationship="rootViewController" id="dNO-Ln-0ri"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="igx-EB-ULW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="71Y-Er-rks" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
+                            <color key="value" red="0.34509803919999998" green="0.58823529409999997" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="iconSelectedColor">
+                            <color key="value" red="0.34509803919999998" green="0.58823529409999997" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="1916" y="-721.88905547226398"/>
+        </scene>
+        <!--いいね-->
+        <scene sceneID="1u7-2b-xDy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LKk-ih-alM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="いいね" image="tab-heart" id="br3-nS-rOA" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="smw-ei-6bS" id="6gB-Hc-cXh"/>
+                        </connections>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PJo-ZR-o1I">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="W7g-dB-adO" kind="relationship" relationship="rootViewController" id="qlG-sW-f99"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="duO-Td-Za3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="smw-ei-6bS" customClass="RAMRightRotationAnimation" customModule="RAMAnimatedTabBarController">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
+                            <color key="value" red="0.34509803919999998" green="0.58823529409999997" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="iconSelectedColor">
+                            <color key="value" red="0.34509803919999998" green="0.58823529409999997" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="1916" y="23.838080959520241"/>
+        </scene>
+        <!--メール-->
+        <scene sceneID="F4K-uf-vYi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jlN-4o-4Eb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="メール" image="tab-mail" id="EZS-t1-HnG" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="NeD-Ol-h1P" id="OS4-hR-GKj"/>
+                        </connections>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YXf-Jd-PQs">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uB9-0C-U0H" kind="relationship" relationship="rootViewController" id="jfH-Gs-PSZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UdU-7z-DIR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="NeD-Ol-h1P" customClass="RAMFlipRightTransitionItemAnimations" customModule="RAMAnimatedTabBarController">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
+                            <color key="value" red="0.34509803919999998" green="0.58823529409999997" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="iconSelectedColor">
+                            <color key="value" red="0.34509803919999998" green="0.58823529409999997" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="1916" y="869.41529235382313"/>
+        </scene>
+        <!--プロフィール-->
+        <scene sceneID="0Sh-v4-bit">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AhS-MG-I3d" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="プロフィール" image="tab-profile" id="70R-N9-CeT" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="SSB-Ly-cb2" id="T4a-29-zRD"/>
+                        </connections>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HNo-qi-RRL">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NOG-tH-H3V" kind="relationship" relationship="rootViewController" id="Kds-tg-dWc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hrk-Zh-1fR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="SSB-Ly-cb2" customClass="RAMFlipTopTransitionItemAnimations" customModule="RAMAnimatedTabBarController">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
+                            <color key="value" red="0.34509803919999998" green="0.58823529409999997" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="iconSelectedColor">
+                            <color key="value" red="0.34509803919999998" green="0.58823529409999997" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="1916" y="1624.1379310344828"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="close-appcolor" width="37" height="37"/>
+        <image name="post-button" width="37" height="37"/>
+        <image name="tab-heart" width="37" height="37"/>
+        <image name="tab-mail" width="37" height="37"/>
+        <image name="tab-profile" width="37" height="37"/>
+        <image name="tab-timeline" width="37" height="37"/>
+    </resources>
 </document>

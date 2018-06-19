@@ -27,6 +27,9 @@ extension FirebaseApp {
         @objc dynamic var seeDesire: String?
         @objc dynamic var liquor: String?
         @objc dynamic var cigarette: String?
+        @objc dynamic var mutter: String?
+        @objc dynamic var profile: String?
+        @objc dynamic var mutterDate: Date?
     }
 }
 

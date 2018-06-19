@@ -64,6 +64,9 @@ PODS:
   - FirebaseStorage (3.0.0):
     - FirebaseCore (~> 5.0)
     - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseUI/Storage (3.1.1):
+    - Firebase/Storage
+    - SDWebImage (~> 4.0)
   - GoogleToolboxForMac/Defines (2.1.4)
   - "GoogleToolboxForMac/NSData+zlib (2.1.4)":
     - GoogleToolboxForMac/Defines (= 2.1.4)
@@ -90,16 +93,21 @@ PODS:
   - IBAnimatable (5.1.0)
   - IQKeyboardManagerSwift (6.0.4)
   - leveldb-library (1.20)
+  - MIBlurPopup (0.1.3)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - Protobuf (3.6.0)
+  - RAMAnimatedTabBarController (3.2.0)
   - Salada (4.1):
     - Firebase/Core
     - Firebase/Database
     - Firebase/Storage
+  - SDWebImage (4.4.1):
+    - SDWebImage/Core (= 4.4.1)
+  - SDWebImage/Core (4.4.1)
   - SVProgressHUD (2.2.5)
   - TextFieldEffects (1.4.0)
 
@@ -111,8 +119,11 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Firestore
   - Firebase/Storage
+  - FirebaseUI/Storage (~> 3.0)
   - IBAnimatable
   - IQKeyboardManagerSwift
+  - MIBlurPopup
+  - RAMAnimatedTabBarController
   - Salada
   - SVProgressHUD
   - TextFieldEffects
@@ -133,6 +144,7 @@ SPEC REPOS:
     - FirebaseFirestore
     - FirebaseInstanceID
     - FirebaseStorage
+    - FirebaseUI
     - GoogleToolboxForMac
     - gRPC
     - gRPC-Core
@@ -142,9 +154,12 @@ SPEC REPOS:
     - IBAnimatable
     - IQKeyboardManagerSwift
     - leveldb-library
+    - MIBlurPopup
     - nanopb
     - Protobuf
+    - RAMAnimatedTabBarController
     - Salada
+    - SDWebImage
     - SVProgressHUD
     - TextFieldEffects
 
@@ -163,6 +178,7 @@ SPEC CHECKSUMS:
   FirebaseFirestore: 04074ef839843569387df819d42c834c792ef215
   FirebaseInstanceID: 05d779cbb97bd5bd5c51a38a903fc9cfe1b2454a
   FirebaseStorage: 7ca4bb7b58a25fa647b04f524033fc7cb7eb272b
+  FirebaseUI: 6e99ff95e369f5858232e4f65bff215458fe8469
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   gRPC: 9362451032695e2dfb7bafcd3740e3a27939e4ff
   gRPC-Core: 9696b220565b283e021cf2722d473a4a74b7622a
@@ -172,12 +188,15 @@ SPEC CHECKSUMS:
   IBAnimatable: dd81f8f22e9982b05e8ac50794e4c8988cc300f2
   IQKeyboardManagerSwift: 36dbe324b4f9793f5f41ba5227f3e7c76dfefd50
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  MIBlurPopup: e0834e469074cabf65a0ca6e6d900c84d48f8a4f
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 0fc0ad8bec688b2a3017a139953e01374fedbd5f
+  RAMAnimatedTabBarController: 0499157f67053a21bcccb52a25dd3c6ecdbfb4f6
   Salada: 06fd3e7f6b6c22f68c967d9124d91bbd285e5a31
+  SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TextFieldEffects: 4ee41b5216e674d55fb6ac25107bf1af7629176f
 
-PODFILE CHECKSUM: 15343466d0c411d3fb0abe143763677acf1f900d
+PODFILE CHECKSUM: ea02e1110dd17b678027bf2bde05a9a8add9219d
 
 COCOAPODS: 1.5.3

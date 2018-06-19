@@ -22,6 +22,12 @@
 		55370C7020CFC9BB00032B82 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55370C6F20CFC9BB00032B82 /* Group.swift */; };
 		5556813F20D253670030B90F /* UIColor+exstension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5556813E20D253670030B90F /* UIColor+exstension.swift */; };
 		5556814620D297740030B90F /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5556814520D297740030B90F /* Const.swift */; };
+		5556814820D3F8BA0030B90F /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5556814720D3F8BA0030B90F /* TimeLineViewController.swift */; };
+		5556814B20D3F9E60030B90F /* TimeLineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5556814A20D3F9E60030B90F /* TimeLineCell.xib */; };
+		5556814D20D3FD060030B90F /* TimeLIneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5556814C20D3FD060030B90F /* TimeLIneCell.swift */; };
+		5556814F20D7BFE30030B90F /* UITextField+exstention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5556814E20D7BFE30030B90F /* UITextField+exstention.swift */; };
+		5556815320D7C6880030B90F /* UITextView+exstention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5556815220D7C6880030B90F /* UITextView+exstention.swift */; };
+		5556815520D8EC6A0030B90F /* PostMutterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5556815420D8EC6A0030B90F /* PostMutterViewController.swift */; };
 		559F1BB720D1011500939E95 /* UIImageView+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559F1BB620D1011500939E95 /* UIImageView+AlamofireImage.swift */; };
 		559F1BB920D10BDA00939E95 /* RegistInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559F1BB820D10BDA00939E95 /* RegistInfoViewController.swift */; };
 		7CE6795270B2146E097D4E24 /* Pods_MilkeyMummy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3955F4ABC00D016156AE482 /* Pods_MilkeyMummy.framework */; };
@@ -45,6 +51,12 @@
 		55370C6F20CFC9BB00032B82 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		5556813E20D253670030B90F /* UIColor+exstension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+exstension.swift"; sourceTree = "<group>"; };
 		5556814520D297740030B90F /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		5556814720D3F8BA0030B90F /* TimeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineViewController.swift; sourceTree = "<group>"; };
+		5556814A20D3F9E60030B90F /* TimeLineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeLineCell.xib; sourceTree = "<group>"; };
+		5556814C20D3FD060030B90F /* TimeLIneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLIneCell.swift; sourceTree = "<group>"; };
+		5556814E20D7BFE30030B90F /* UITextField+exstention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+exstention.swift"; sourceTree = "<group>"; };
+		5556815220D7C6880030B90F /* UITextView+exstention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+exstention.swift"; sourceTree = "<group>"; };
+		5556815420D8EC6A0030B90F /* PostMutterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMutterViewController.swift; sourceTree = "<group>"; };
 		559F1BB620D1011500939E95 /* UIImageView+AlamofireImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+AlamofireImage.swift"; sourceTree = "<group>"; };
 		559F1BB820D10BDA00939E95 /* RegistInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistInfoViewController.swift; sourceTree = "<group>"; };
 		C4744C64275D79667383646D /* Pods-MilkeyMummy.develop_release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkeyMummy.develop_release.xcconfig"; path = "Pods/Target Support Files/Pods-MilkeyMummy/Pods-MilkeyMummy.develop_release.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +116,7 @@
 			children = (
 				552B813120CE3F1A00E8C71A /* AppDelegate.swift */,
 				552B815620CE85F900E8C71A /* ViewControllers */,
+				5556814920D3F9CF0030B90F /* Views */,
 				55370C6A20CFBBC400032B82 /* Model */,
 				559F1BB520D100DE00939E95 /* Extension */,
 				552B815720CE862500E8C71A /* Storyboards */,
@@ -132,6 +145,8 @@
 				552B813320CE3F1A00E8C71A /* ViewController.swift */,
 				552B815F20CE969500E8C71A /* RegistViewController.swift */,
 				559F1BB820D10BDA00939E95 /* RegistInfoViewController.swift */,
+				5556814720D3F8BA0030B90F /* TimeLineViewController.swift */,
+				5556815420D8EC6A0030B90F /* PostMutterViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -163,11 +178,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		5556814920D3F9CF0030B90F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5556814A20D3F9E60030B90F /* TimeLineCell.xib */,
+				5556814C20D3FD060030B90F /* TimeLIneCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		559F1BB520D100DE00939E95 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				559F1BB620D1011500939E95 /* UIImageView+AlamofireImage.swift */,
 				5556813E20D253670030B90F /* UIColor+exstension.swift */,
+				5556814E20D7BFE30030B90F /* UITextField+exstention.swift */,
+				5556815220D7C6880030B90F /* UITextView+exstention.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -242,6 +268,7 @@
 			files = (
 				552B815C20CE88A700E8C71A /* GoogleService-Info-develop-release.plist in Resources */,
 				552B813F20CE3F1B00E8C71A /* LaunchScreen.storyboard in Resources */,
+				5556814B20D3F9E60030B90F /* TimeLineCell.xib in Resources */,
 				552B813C20CE3F1B00E8C71A /* Assets.xcassets in Resources */,
 				552B813720CE3F1A00E8C71A /* Main.storyboard in Resources */,
 				552B815E20CE92F800E8C71A /* Regist.storyboard in Resources */,
@@ -269,7 +296,10 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IBAnimatable/IBAnimatable.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/MIBlurPopup/MIBlurPopup.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
@@ -291,7 +321,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBAnimatable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MIBlurPopup.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMAnimatedTabBarController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
@@ -331,17 +364,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5556815320D7C6880030B90F /* UITextView+exstention.swift in Sources */,
+				5556814F20D7BFE30030B90F /* UITextField+exstention.swift in Sources */,
 				55370C7020CFC9BB00032B82 /* Group.swift in Sources */,
 				5556813F20D253670030B90F /* UIColor+exstension.swift in Sources */,
 				552B816020CE969500E8C71A /* RegistViewController.swift in Sources */,
 				559F1BB720D1011500939E95 /* UIImageView+AlamofireImage.swift in Sources */,
 				559F1BB920D10BDA00939E95 /* RegistInfoViewController.swift in Sources */,
+				5556814820D3F8BA0030B90F /* TimeLineViewController.swift in Sources */,
 				552B813420CE3F1A00E8C71A /* ViewController.swift in Sources */,
 				55370C6E20CFBC8D00032B82 /* User.swift in Sources */,
 				552B815320CE431E00E8C71A /* Environment.swift in Sources */,
+				5556814D20D3FD060030B90F /* TimeLIneCell.swift in Sources */,
 				552B813220CE3F1A00E8C71A /* AppDelegate.swift in Sources */,
 				552B813A20CE3F1A00E8C71A /* MilkeyMummy.xcdatamodeld in Sources */,
 				5556814620D297740030B90F /* Const.swift in Sources */,
+				5556815520D8EC6A0030B90F /* PostMutterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

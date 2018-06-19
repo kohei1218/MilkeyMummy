@@ -84,8 +84,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
                     self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "RegistInfoViewController")
                 } else {
                     //登録後の処理
-                    let storyboard:UIStoryboard = UIStoryboard(name: "Regist",bundle:nil)
-                    self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "RegistInfoViewController")
+                    let storyboard:UIStoryboard = UIStoryboard(name: "Main",bundle:nil)
+                    self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "MainTabViewController")
                 }
             }
         }

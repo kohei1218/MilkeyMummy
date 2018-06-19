@@ -85,14 +85,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2Z-SL-XhN">
-                                <rect key="frame" x="319" y="20" width="44" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="cA1-Mb-rDb"/>
-                                    <constraint firstAttribute="width" constant="44" id="xdm-er-Zsz"/>
-                                </constraints>
-                                <state key="normal" image="close-appcolor"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="もう少しで登録完了です！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxV-gZ-DwS">
                                 <rect key="frame" x="83.5" y="48" width="208" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -222,7 +214,6 @@
                             <constraint firstItem="STS-Qs-RVB" firstAttribute="centerX" secondItem="4OA-77-5b8" secondAttribute="centerX" id="ETI-dD-ggn"/>
                             <constraint firstItem="aLg-En-xb1" firstAttribute="leading" secondItem="Dhb-nC-pDg" secondAttribute="leading" constant="20" id="GzC-Ag-rcy"/>
                             <constraint firstItem="Dhb-nC-pDg" firstAttribute="trailing" secondItem="cQb-ah-6Hr" secondAttribute="trailing" constant="20" id="GzW-UC-a3p"/>
-                            <constraint firstItem="P2Z-SL-XhN" firstAttribute="top" secondItem="Dhb-nC-pDg" secondAttribute="top" id="HW7-am-7tC"/>
                             <constraint firstItem="g1s-zw-McH" firstAttribute="centerX" secondItem="4OA-77-5b8" secondAttribute="centerX" id="J4e-Lm-oDp"/>
                             <constraint firstItem="8QG-UF-0MY" firstAttribute="top" secondItem="g1s-zw-McH" secondAttribute="bottom" constant="40" id="KQP-8B-KiV"/>
                             <constraint firstItem="wxV-gZ-DwS" firstAttribute="top" secondItem="Dhb-nC-pDg" secondAttribute="top" constant="28" id="LXt-6I-1bH"/>
@@ -238,7 +229,6 @@
                             <constraint firstItem="8QG-UF-0MY" firstAttribute="leading" secondItem="Dhb-nC-pDg" secondAttribute="leading" constant="20" id="gRF-6O-QFt"/>
                             <constraint firstItem="cQb-ah-6Hr" firstAttribute="top" secondItem="get-R3-MIi" secondAttribute="bottom" id="gZy-9x-Hhx"/>
                             <constraint firstItem="wxV-gZ-DwS" firstAttribute="centerX" secondItem="4OA-77-5b8" secondAttribute="centerX" id="gbl-hT-U6F"/>
-                            <constraint firstItem="Dhb-nC-pDg" firstAttribute="trailing" secondItem="P2Z-SL-XhN" secondAttribute="trailing" constant="12" id="gng-Ry-80L"/>
                             <constraint firstItem="aDO-mI-zwR" firstAttribute="leading" secondItem="Dhb-nC-pDg" secondAttribute="leading" constant="20" id="mpT-5H-Ej2"/>
                             <constraint firstItem="get-R3-MIi" firstAttribute="leading" secondItem="Dhb-nC-pDg" secondAttribute="leading" constant="20" id="nFp-dU-Pij"/>
                             <constraint firstItem="OUa-2N-UNI" firstAttribute="top" secondItem="aLg-En-xb1" secondAttribute="bottom" id="qjD-vp-vXO"/>
@@ -261,7 +251,4 @@
             <point key="canvasLocation" x="828" y="86"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="close-appcolor" width="37" height="37"/>
-    </resources>
 </document>
