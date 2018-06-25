@@ -30,6 +30,13 @@ extension FirebaseApp {
         @objc dynamic var mutter: String?
         @objc dynamic var profile: String?
         @objc dynamic var mutterDate: Date?
+        @objc dynamic var height: Int = 0
+        @objc dynamic var figure: String?
+        @objc dynamic var future: String?
+        @objc dynamic var hopePlace: String?
+        @objc dynamic var hobby: String?
+        @objc dynamic var type: String?
+        @objc dynamic var holiday: String?
     }
 }
 
