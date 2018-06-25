@@ -31,7 +31,7 @@
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t5O-oo-RRf">
                     <rect key="frame" x="0.0" y="160" width="200" height="40"/>
-                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40071168664383561" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29997859589041098" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="nVO-XP-4rF"/>
                     </constraints>

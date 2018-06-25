@@ -18,7 +18,18 @@ class TimeLineViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        FirebaseApp.User.current{ user in
+        let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButtonItem
+        setCollectionView()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    private func setCollectionView() {
+        FirebaseApp.User.current { user in
             self.collectionView.register(UINib(nibName: "TimeLineCell", bundle: nil), forCellWithReuseIdentifier: "cell")
             let options: Options = Options()
             options.limit = 10
@@ -45,17 +56,6 @@ class TimeLineViewController: UIViewController {
             })
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let next = segue.destination as? TimeLineDetailViewController
-//        let _ = next?.view
-//        next?.opponentUser = selectUser
-//    }
     
 }
 

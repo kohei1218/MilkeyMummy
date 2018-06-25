@@ -38,6 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         //IQKeyboardManager
         IQKeyboardManager.shared.enable = true
+        //navigation 色変更
+        UINavigationBar.appearance().tintColor = UIColor.appColor()
         
         showRootViewControoler()
         return true

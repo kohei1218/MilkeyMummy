@@ -9,14 +9,21 @@
 import UIKit
 import Salada
 import Firebase
+import FirebaseStorageUI
 
 class TimeLineDetailViewController: UIViewController {
 
     var opponentUser:FirebaseApp.User?
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var nickNameLabel: UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
+    @IBOutlet weak var residentLabel: UILabel!
+    @IBOutlet weak var mutterLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("nickname!!!:", self.opponentUser?.nickName)
+        setupUI()
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,15 +31,15 @@ class TimeLineDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func setupUI() {
+        self.navigationItem.title = opponentUser?.nickName
+        nickNameLabel.text = opponentUser?.nickName
+        ageLabel.text = (opponentUser?.age.description)! + "歳"
+        residentLabel.text = opponentUser?.residence
+        mutterLabel.text = opponentUser?.mutter
+        if let ref: StorageReference = opponentUser?.thumbnail?.ref {
+            self.profileImageView.sd_setImage(with: ref, placeholderImage: UIImage(named: "loading-appcolor"))
+        }
     }
-    */
 
 }
