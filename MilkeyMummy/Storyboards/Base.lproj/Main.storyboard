@@ -126,7 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HNC-WU-yEH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2855.1999999999998" y="-721.88905547226398"/>
+            <point key="canvasLocation" x="2855" y="-722"/>
         </scene>
         <!--Post Mutter View Controller-->
         <scene sceneID="8w1-zD-KQj">
@@ -202,7 +202,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LeJ-wg-wzX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3666.4000000000001" y="-722.78860569715152"/>
+            <point key="canvasLocation" x="3668" y="-1210"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MdU-Tt-JDI">
+            <objects>
+                <navigationController storyboardIdentifier="timeLineDetailNavigation" id="fHc-T3-6Og" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Wh3-Eh-4UR"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4lu-8c-HzK">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="aqi-H8-uo1" kind="relationship" relationship="rootViewController" id="hsR-4A-L5c"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8yr-c0-Pzw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3668" y="-440"/>
+        </scene>
+        <!--Time Line Detail View Controller-->
+        <scene sceneID="3Cv-rX-kbN">
+            <objects>
+                <viewController id="aqi-H8-uo1" customClass="TimeLineDetailViewController" customModule="MilkeyMummy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kuj-8W-c4n">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="vIz-fk-7bD"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cui-zT-OxK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qJY-r9-CZV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4538" y="-440"/>
         </scene>
         <!--Animated Tab Bar Controller-->
         <scene sceneID="0Ec-N2-Jdr">

@@ -18,27 +18,32 @@ class TimeLineViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.register(UINib(nibName: "TimeLineCell", bundle: nil), forCellWithReuseIdentifier: "cell")
-        
-        let options: Options = Options()
-        options.limit = 10
-        options.predicate = NSPredicate(format: "gender == 'female'")
-//        options.sortDescirptors = [NSSortDescriptor(key: "age", ascending: false)]
-        self.dataSource = DataSource(reference: FirebaseApp.User.databaseRef, options: options, block: { [weak self](changes) in
-            guard let collectionView: UICollectionView = self?.collectionView else { return }
-            switch changes {
-            case .initial:
-                self?.collectionView.reloadData()
-            case .update(let deletions, let insertions, let modifications):
-                collectionView.performBatchUpdates({
-                    collectionView.insertItems(at: insertions.map { IndexPath(row: $0, section: 0) })
-                    collectionView.deleteItems(at: deletions.map { IndexPath(row: $0, section: 0) })
-                    collectionView.reloadItems(at: modifications.map { IndexPath(row: $0, section: 0) })
-                }, completion: nil)
-            case .error(let error):
-                print(error)
+        FirebaseApp.User.current{ user in
+            self.collectionView.register(UINib(nibName: "TimeLineCell", bundle: nil), forCellWithReuseIdentifier: "cell")
+            let options: Options = Options()
+            options.limit = 10
+            if user?.gender == "male" {
+                options.predicate = NSPredicate(format: "gender == 'female'")
+            } else {
+                options.predicate = NSPredicate(format: "gender == 'male'")
             }
-        })
+            options.sortDescirptors = [NSSortDescriptor(key: "mutterDate", ascending: false)]
+            self.dataSource = DataSource(reference: FirebaseApp.User.databaseRef, options: options, block: { [weak self](changes) in
+                guard let collectionView: UICollectionView = self?.collectionView else { return }
+                switch changes {
+                case .initial:
+                    self?.collectionView.reloadData()
+                case .update(let deletions, let insertions, let modifications):
+                    collectionView.performBatchUpdates({
+                        collectionView.insertItems(at: insertions.map { IndexPath(row: $0, section: 0) })
+                        collectionView.deleteItems(at: deletions.map { IndexPath(row: $0, section: 0) })
+                        collectionView.reloadItems(at: modifications.map { IndexPath(row: $0, section: 0) })
+                    }, completion: nil)
+                case .error(let error):
+                    print(error)
+                }
+            })
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,10 +51,19 @@ class TimeLineViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let next = segue.destination as? TimeLineDetailViewController
+//        let _ = next?.view
+//        next?.opponentUser = selectUser
+//    }
+    
 }
 
 extension TimeLineViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if self.dataSource?.count == nil {
+            return 0
+        }
         return (self.dataSource?.count)!
     }
     
@@ -75,6 +89,16 @@ extension TimeLineViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 20
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.dataSource?.observeObject(at: indexPath.item, block: { (user) in
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let naviView = storyboard.instantiateViewController(withIdentifier: "timeLineDetailNavigation") as! UINavigationController
+            let view = naviView.topViewController as! TimeLineDetailViewController
+            view.opponentUser = user
+            self.navigationController?.pushViewController(view, animated: true)
+        })
     }
     
     func configure(_ cell: TimeLIneCell, atIndexPath indexPath: IndexPath) {
