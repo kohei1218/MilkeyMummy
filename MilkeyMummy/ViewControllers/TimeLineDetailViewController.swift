@@ -10,6 +10,7 @@ import UIKit
 import Salada
 import Firebase
 import FirebaseStorageUI
+import RAMAnimatedTabBarController
 
 class TimeLineDetailViewController: UIViewController {
 
@@ -44,6 +45,11 @@ class TimeLineDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        let animatedTabBar = self.tabBarController as! RAMAnimatedTabBarController
+        animatedTabBar.animationTabBarHidden(true)
+    }
+    
     private func setupUI() {
         self.navigationItem.title = opponentUser?.nickName
         setUserProfile()
@@ -69,6 +75,7 @@ class TimeLineDetailViewController: UIViewController {
         cigaretteLabel.text = opponentUser?.cigarette
         holidayLabel.text = opponentUser?.holiday
         positionLabel.text = opponentUser?.position
+        
     }
 
 }

@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import Salada
 import FirebaseStorageUI
+import RAMAnimatedTabBarController
 
 class TimeLineViewController: UIViewController {
 
@@ -26,6 +27,11 @@ class TimeLineViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let animatedTabBar = self.tabBarController as! RAMAnimatedTabBarController
+        animatedTabBar.animationTabBarHidden(false)
     }
     
     private func setCollectionView() {
