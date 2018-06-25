@@ -29,6 +29,16 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="よろしくお願いします" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RfN-eo-RzH">
+                    <rect key="frame" x="0.0" y="160" width="200" height="40"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.404296875" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="7EQ-0f-1PT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -37,16 +47,20 @@
                 <constraint firstItem="vgX-Xo-LwG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="12" id="LZR-aE-F8I"/>
                 <constraint firstItem="vgX-Xo-LwG" firstAttribute="top" secondItem="Nds-lD-o0N" secondAttribute="bottom" id="MOD-mg-vz9"/>
                 <constraint firstItem="Nds-lD-o0N" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="QfF-TS-mhT"/>
+                <constraint firstItem="vgX-Xo-LwG" firstAttribute="top" secondItem="RfN-eo-RzH" secondAttribute="bottom" id="TWC-UM-nQH"/>
                 <constraint firstItem="Nds-lD-o0N" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="h77-kp-Kaq"/>
+                <constraint firstItem="RfN-eo-RzH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ol0-CR-Esh"/>
                 <constraint firstAttribute="trailing" secondItem="Nds-lD-o0N" secondAttribute="trailing" id="sMS-EI-FIt"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="RfN-eo-RzH" secondAttribute="trailing" id="u6j-EZ-vCF"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="mutterLabel" destination="RfN-eo-RzH" id="oWj-zU-MUI"/>
                 <outlet property="profileImageView" destination="Nds-lD-o0N" id="S0T-LP-fWc"/>
                 <outlet property="profileLabel" destination="vgX-Xo-LwG" id="Zq1-pa-x8w"/>
             </connections>
-            <point key="canvasLocation" x="-54" y="-155"/>
+            <point key="canvasLocation" x="-218" y="-160"/>
         </view>
     </objects>
 </document>

@@ -137,13 +137,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocL-3F-MeS">
-                                <rect key="frame" x="153" y="52" width="69.5" height="21"/>
+                                <rect key="frame" x="188" y="52" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ex.素敵な時間を過ごしましょう！" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Waz-Ff-FhD" customClass="MadokaTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="16" y="93" width="343" height="40"/>
+                                <rect key="frame" x="16" y="72" width="343" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="M19-0k-lhq"/>
                                 </constraints>
@@ -155,7 +155,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bbe-vO-eaV" customClass="AnimatableButton" customModule="IBAnimatable">
-                                <rect key="frame" x="164" y="174" width="46" height="30"/>
+                                <rect key="frame" x="20" y="172" width="335" height="52"/>
                                 <color key="backgroundColor" red="0.34509803919999998" green="0.58823529409999997" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="8rD-eA-Ohd"/>
@@ -173,7 +173,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="km7-vK-zvm">
-                                <rect key="frame" x="318" y="40" width="37" height="37"/>
+                                <rect key="frame" x="318" y="36" width="37" height="37"/>
                                 <state key="normal" image="close-appcolor"/>
                                 <connections>
                                     <action selector="actionCloseView:" destination="nOR-k3-6cG" eventType="touchUpInside" id="zMp-Kf-HJk"/>

@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import Salada
+import FirebaseStorageUI
 
 class TimeLineViewController: UIViewController {
 
@@ -17,8 +18,6 @@ class TimeLineViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let nib: UINib = UINib(nibName: "TimeLineViewCell", bundle: nil)
-//        collectionView.register(nib, forCellWithReuseIdentifier: "cell")
         collectionView.register(UINib(nibName: "TimeLineCell", bundle: nil), forCellWithReuseIdentifier: "cell")
         
         let options: Options = Options()
@@ -62,14 +61,12 @@ extension TimeLineViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:TimeLIneCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! TimeLIneCell
-//        cell.profileImageView.image = UIImage(named: "tab-timeline")
-//        cell.profileLabel.text = "ちゃす"
         configure(cell, atIndexPath: indexPath)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(20 , 2 , 20 , 2 )
+        return UIEdgeInsetsMake(0 , 2 , 20 , 2 )
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -82,7 +79,11 @@ extension TimeLineViewController: UICollectionViewDelegate, UICollectionViewData
     
     func configure(_ cell: TimeLIneCell, atIndexPath indexPath: IndexPath) {
         cell.disposer = self.dataSource?.observeObject(at: indexPath.item, block: { (user) in
-            cell.profileLabel.text = user?.nickName
+            cell.mutterLabel.text = user?.mutter
+            cell.profileLabel.text = (user?.nickName)! + ""
+            if let ref: StorageReference = user?.thumbnail?.ref {
+                cell.profileImageView.sd_setImage(with: ref, placeholderImage: UIImage(named: "loading-appcolor"))
+            }
         })
     }
     
