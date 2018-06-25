@@ -29,9 +29,15 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="よろしくお願いします" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RfN-eo-RzH">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t5O-oo-RRf">
                     <rect key="frame" x="0.0" y="160" width="200" height="40"/>
-                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.404296875" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40071168664383561" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="nVO-XP-4rF"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="よろしくお願いします" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RfN-eo-RzH">
+                    <rect key="frame" x="12" y="160" width="188" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="7EQ-0f-1PT"/>
                     </constraints>
@@ -48,10 +54,13 @@
                 <constraint firstItem="vgX-Xo-LwG" firstAttribute="top" secondItem="Nds-lD-o0N" secondAttribute="bottom" id="MOD-mg-vz9"/>
                 <constraint firstItem="Nds-lD-o0N" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="QfF-TS-mhT"/>
                 <constraint firstItem="vgX-Xo-LwG" firstAttribute="top" secondItem="RfN-eo-RzH" secondAttribute="bottom" id="TWC-UM-nQH"/>
+                <constraint firstItem="vgX-Xo-LwG" firstAttribute="top" secondItem="t5O-oo-RRf" secondAttribute="bottom" id="aqj-Kb-p4U"/>
                 <constraint firstItem="Nds-lD-o0N" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="h77-kp-Kaq"/>
-                <constraint firstItem="RfN-eo-RzH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ol0-CR-Esh"/>
+                <constraint firstItem="RfN-eo-RzH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="12" id="h9q-Ea-82V"/>
+                <constraint firstItem="t5O-oo-RRf" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="ihK-d8-guw"/>
                 <constraint firstAttribute="trailing" secondItem="Nds-lD-o0N" secondAttribute="trailing" id="sMS-EI-FIt"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="RfN-eo-RzH" secondAttribute="trailing" id="u6j-EZ-vCF"/>
+                <constraint firstItem="t5O-oo-RRf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="wJO-JR-hmh"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

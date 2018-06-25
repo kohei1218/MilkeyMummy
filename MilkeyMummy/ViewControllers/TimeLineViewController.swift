@@ -22,7 +22,7 @@ class TimeLineViewController: UIViewController {
         
         let options: Options = Options()
         options.limit = 10
-        options.predicate = NSPredicate(format: "gender == 'male'")
+        options.predicate = NSPredicate(format: "gender == 'female'")
 //        options.sortDescirptors = [NSSortDescriptor(key: "age", ascending: false)]
         self.dataSource = DataSource(reference: FirebaseApp.User.databaseRef, options: options, block: { [weak self](changes) in
             guard let collectionView: UICollectionView = self?.collectionView else { return }
