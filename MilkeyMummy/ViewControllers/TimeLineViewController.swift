@@ -98,23 +98,23 @@ extension TimeLineViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.dataSource?.observeObject(at: indexPath.item, block: { (user) in
+        if let user: FirebaseApp.User = self.dataSource?.objects[indexPath.item] {
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             let naviView = storyboard.instantiateViewController(withIdentifier: "timeLineDetailNavigation") as! UINavigationController
             let view = naviView.topViewController as! TimeLineDetailViewController
             view.opponentUser = user
             self.navigationController?.pushViewController(view, animated: true)
-        })
+        }
     }
     
     func configure(_ cell: TimeLIneCell, atIndexPath indexPath: IndexPath) {
-        cell.disposer = self.dataSource?.observeObject(at: indexPath.item, block: { (user) in
-            cell.mutterLabel.text = user?.mutter
-            cell.profileLabel.text = (user?.nickName)! + ""
-            if let ref: StorageReference = user?.thumbnail?.ref {
+        if let user: FirebaseApp.User = self.dataSource?.objects[indexPath.item] {
+            cell.mutterLabel.text = user.mutter
+            cell.profileLabel.text = (user.nickName)! + ""
+            if let ref: StorageReference = user.thumbnail?.ref {
                 cell.profileImageView.sd_setImage(with: ref, placeholderImage: UIImage(named: "loading-appcolor"))
             }
-        })
+        }
     }
     
 }

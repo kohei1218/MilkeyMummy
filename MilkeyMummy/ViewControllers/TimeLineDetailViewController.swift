@@ -42,6 +42,16 @@ class TimeLineDetailViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         loveButton.isLoved = false
+        FirebaseApp.User.current { user in
+            Favorites.child((user?.id)!).contains((self.opponentUser?.id)!, block: { bool in
+                if bool {
+                    self.loveButton.isLoved = true
+                    self.favoriteButton.setTitle("いいね！済み", for: .normal)
+                    self.favoriteButton.isEnabled = false
+                }
+            })
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

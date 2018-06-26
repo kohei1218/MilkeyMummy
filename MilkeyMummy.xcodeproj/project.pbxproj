@@ -29,6 +29,7 @@
 		5556815320D7C6880030B90F /* UITextView+exstention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5556815220D7C6880030B90F /* UITextView+exstention.swift */; };
 		5556815520D8EC6A0030B90F /* PostMutterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5556815420D8EC6A0030B90F /* PostMutterViewController.swift */; };
 		558513EA20E15D61001982D9 /* LoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558513E920E15D61001982D9 /* LoveButton.swift */; };
+		558513EC20E23697001982D9 /* User-Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558513EB20E23696001982D9 /* User-Favorite.swift */; };
 		559A350820E0DF69000B302F /* TimeLineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A350720E0DF69000B302F /* TimeLineDetailViewController.swift */; };
 		559F1BB720D1011500939E95 /* UIImageView+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559F1BB620D1011500939E95 /* UIImageView+AlamofireImage.swift */; };
 		559F1BB920D10BDA00939E95 /* RegistInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559F1BB820D10BDA00939E95 /* RegistInfoViewController.swift */; };
@@ -60,6 +61,7 @@
 		5556815220D7C6880030B90F /* UITextView+exstention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+exstention.swift"; sourceTree = "<group>"; };
 		5556815420D8EC6A0030B90F /* PostMutterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMutterViewController.swift; sourceTree = "<group>"; };
 		558513E920E15D61001982D9 /* LoveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveButton.swift; sourceTree = "<group>"; };
+		558513EB20E23696001982D9 /* User-Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User-Favorite.swift"; sourceTree = "<group>"; };
 		559A350720E0DF69000B302F /* TimeLineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineDetailViewController.swift; sourceTree = "<group>"; };
 		559F1BB620D1011500939E95 /* UIImageView+AlamofireImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+AlamofireImage.swift"; sourceTree = "<group>"; };
 		559F1BB820D10BDA00939E95 /* RegistInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistInfoViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			children = (
 				55370C6D20CFBC8D00032B82 /* User.swift */,
 				55370C6F20CFC9BB00032B82 /* Group.swift */,
+				558513EB20E23696001982D9 /* User-Favorite.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				559F1BB920D10BDA00939E95 /* RegistInfoViewController.swift in Sources */,
 				5556814820D3F8BA0030B90F /* TimeLineViewController.swift in Sources */,
 				552B813420CE3F1A00E8C71A /* ViewController.swift in Sources */,
+				558513EC20E23697001982D9 /* User-Favorite.swift in Sources */,
 				55370C6E20CFBC8D00032B82 /* User.swift in Sources */,
 				552B815320CE431E00E8C71A /* Environment.swift in Sources */,
 				5556814D20D3FD060030B90F /* TimeLIneCell.swift in Sources */,
