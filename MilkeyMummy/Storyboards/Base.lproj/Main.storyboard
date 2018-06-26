@@ -227,11 +227,11 @@
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="8U3-cA-hZ8" customClass="TimeLineDetailViewController" customModule="MilkeyMummy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="msY-DW-Gpf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1050"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yGT-K2-Rvq">
-                                <rect key="frame" x="0.0" y="64" width="375" height="986"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="1036"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S5G-gW-0gj">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="986"/>
@@ -559,27 +559,82 @@
                                     <constraint firstItem="S5G-gW-0gj" firstAttribute="width" secondItem="yGT-K2-Rvq" secondAttribute="width" id="xDa-Qn-rfb"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cnU-sU-D5g">
+                                <rect key="frame" x="0.0" y="1050" width="375" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VRQ-pu-rjF" customClass="AnimatableButton" customModule="IBAnimatable">
+                                        <rect key="frame" x="8" y="5" width="359" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.60784313725490191" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="hYj-KB-KBu"/>
+                                        </constraints>
+                                        <state key="normal" title="いいね！">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="actionFavrotite:" destination="8U3-cA-hZ8" eventType="touchUpInside" id="xlr-wR-0Mz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2x-c4-l0n" customClass="LoveButton" customModule="MilkeyMummy" customModuleProvider="target">
+                                        <rect key="frame" x="12" y="5" width="46" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="OlS-oU-SDp"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="loveColor">
+                                                <color key="value" red="0.77647058820000003" green="0.1764705882" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="unLoveColor">
+                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="loveImage" value="heart-red"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="unLoveImage" value="heart-gray"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="VRQ-pu-rjF" secondAttribute="bottom" constant="5" id="0Xk-zh-WcR"/>
+                                    <constraint firstAttribute="bottom" secondItem="M2x-c4-l0n" secondAttribute="bottom" constant="5" id="7FG-ZZ-upM"/>
+                                    <constraint firstItem="VRQ-pu-rjF" firstAttribute="leading" secondItem="cnU-sU-D5g" secondAttribute="leading" constant="8" id="BMs-JX-Jsn"/>
+                                    <constraint firstAttribute="trailing" secondItem="VRQ-pu-rjF" secondAttribute="trailing" constant="8" id="KXg-VT-8mj"/>
+                                    <constraint firstAttribute="height" constant="50" id="R78-IK-p5A"/>
+                                    <constraint firstItem="VRQ-pu-rjF" firstAttribute="top" secondItem="cnU-sU-D5g" secondAttribute="top" constant="5" id="bJ1-Da-RoU"/>
+                                    <constraint firstItem="M2x-c4-l0n" firstAttribute="top" secondItem="cnU-sU-D5g" secondAttribute="top" constant="5" id="gT8-bm-XLx"/>
+                                    <constraint firstItem="M2x-c4-l0n" firstAttribute="leading" secondItem="cnU-sU-D5g" secondAttribute="leading" constant="12" id="xvf-Ux-G4N"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="yGT-K2-Rvq" firstAttribute="top" secondItem="Vjd-QA-dPg" secondAttribute="top" id="4u1-Yz-IoT"/>
                             <constraint firstItem="Vjd-QA-dPg" firstAttribute="bottom" secondItem="yGT-K2-Rvq" secondAttribute="bottom" id="IOh-gw-Snw"/>
+                            <constraint firstItem="cnU-sU-D5g" firstAttribute="leading" secondItem="Vjd-QA-dPg" secondAttribute="leading" id="Szq-XU-mAv"/>
                             <constraint firstItem="yGT-K2-Rvq" firstAttribute="leading" secondItem="Vjd-QA-dPg" secondAttribute="leading" id="fW9-fa-AXX"/>
+                            <constraint firstItem="Vjd-QA-dPg" firstAttribute="trailing" secondItem="cnU-sU-D5g" secondAttribute="trailing" id="rrw-VI-9bf"/>
+                            <constraint firstItem="Vjd-QA-dPg" firstAttribute="bottom" secondItem="cnU-sU-D5g" secondAttribute="bottom" id="wUH-K9-Lkl"/>
                             <constraint firstItem="Vjd-QA-dPg" firstAttribute="trailing" secondItem="yGT-K2-Rvq" secondAttribute="trailing" id="zeR-pE-Gy4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vjd-QA-dPg"/>
                     </view>
                     <navigationItem key="navigationItem" id="E2v-59-IFw"/>
-                    <size key="freeformSize" width="375" height="1050"/>
+                    <size key="freeformSize" width="375" height="1100"/>
                     <connections>
                         <outlet property="ageLabel" destination="wrT-41-X7H" id="WIR-He-JnW"/>
                         <outlet property="cigaretteLabel" destination="p9q-5t-l0s" id="QE6-DJ-dLA"/>
+                        <outlet property="favoriteButton" destination="VRQ-pu-rjF" id="mQ1-xI-9Ja"/>
                         <outlet property="figureLabel" destination="xrj-Ld-Yed" id="91X-n9-Ahd"/>
                         <outlet property="futureLabel" destination="DoT-y2-BJ4" id="A8y-hZ-AcQ"/>
                         <outlet property="heightLabel" destination="cca-od-aFe" id="3Zt-Mk-UAN"/>
                         <outlet property="hobbyLabel" destination="L8V-Y3-dbi" id="dFB-rf-t0a"/>
                         <outlet property="holidayLabel" destination="yM5-Rh-NuB" id="In7-R1-adt"/>
                         <outlet property="liquorLabel" destination="kLW-rk-Zg9" id="iDU-N4-gru"/>
+                        <outlet property="loveButton" destination="M2x-c4-l0n" id="1i7-6f-V82"/>
                         <outlet property="mutterLabel" destination="3kb-cq-yuX" id="TUA-VV-poK"/>
                         <outlet property="nickNameLabel" destination="dXC-RB-Zjt" id="y06-K5-fzZ"/>
                         <outlet property="placeLabel" destination="gcI-g1-r3e" id="7WB-3K-pu9"/>
@@ -751,6 +806,8 @@
     </scenes>
     <resources>
         <image name="close-appcolor" width="37" height="37"/>
+        <image name="heart-gray" width="37" height="37"/>
+        <image name="heart-red" width="37" height="37"/>
         <image name="post-button" width="37" height="37"/>
         <image name="tab-heart" width="37" height="37"/>
         <image name="tab-mail" width="37" height="37"/>

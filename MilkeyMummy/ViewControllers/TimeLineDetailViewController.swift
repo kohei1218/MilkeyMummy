@@ -11,6 +11,7 @@ import Salada
 import Firebase
 import FirebaseStorageUI
 import RAMAnimatedTabBarController
+import IBAnimatable
 
 class TimeLineDetailViewController: UIViewController {
 
@@ -34,10 +35,13 @@ class TimeLineDetailViewController: UIViewController {
     @IBOutlet weak var holidayLabel: UILabel!
     @IBOutlet weak var positionLabel: UILabel!
     
+    @IBOutlet weak var favoriteButton: AnimatableButton!
+    @IBOutlet weak var loveButton: LoveButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        loveButton.isLoved = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,5 +81,10 @@ class TimeLineDetailViewController: UIViewController {
         positionLabel.text = opponentUser?.position
         
     }
-
+    @IBAction func actionFavrotite(_ sender: Any) {
+        loveButton.isLoved = true
+        favoriteButton.setTitle("いいね！済み", for: .normal)
+        favoriteButton.isEnabled = false
+    }
+    
 }
