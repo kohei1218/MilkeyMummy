@@ -9,6 +9,7 @@
 import UIKit
 import Salada
 import Firebase
+import DZNEmptyDataSet
 
 class FavoriteViewController: UIViewController {
     
@@ -26,6 +27,7 @@ class FavoriteViewController: UIViewController {
     }
     
     private func setTableView() {
+        self.favoriteTableView.tableFooterView = UIView(frame: .zero)
         FirebaseApp.User.current { user in
             self.favoriteTableView.register(UINib(nibName: "FavoriteCell", bundle: nil), forCellReuseIdentifier: "cell")
             let options: Options = Options()
@@ -80,4 +82,17 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
         return .leastNormalMagnitude
     }
     
+}
+
+extension FavoriteViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = "まだいいね！されていません。"
+        let font = UIFont(name: "Helvetica", size: 20)!
+        return NSAttributedString(string: text, attributes: [NSAttributedStringKey.font: font])
+    }
+    
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "heart-red.png")
+    }
 }

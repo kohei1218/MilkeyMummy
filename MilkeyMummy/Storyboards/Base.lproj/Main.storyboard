@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="134" y="125"/>
         </scene>
-        <!--いいね-->
+        <!--Empty Data Set Delegate-->
         <scene sceneID="SnZ-sW-fyO">
             <objects>
                 <viewController id="W7g-dB-adO" customClass="FavoriteViewController" customModule="MilkeyMummy" customModuleProvider="target" sceneMemberID="viewController">
@@ -40,6 +40,8 @@
                                 <connections>
                                     <outlet property="dataSource" destination="W7g-dB-adO" id="32o-Hg-C7P"/>
                                     <outlet property="delegate" destination="W7g-dB-adO" id="0iZ-XP-T7o"/>
+                                    <outlet property="emptyDataSetDelegate" destination="W7g-dB-adO" id="7BI-3H-kSy"/>
+                                    <outlet property="emptyDataSetSource" destination="W7g-dB-adO" id="d7b-2n-Xhl"/>
                                 </connections>
                             </tableView>
                         </subviews>
