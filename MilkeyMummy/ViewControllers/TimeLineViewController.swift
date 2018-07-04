@@ -106,6 +106,12 @@ extension TimeLineViewController: UICollectionViewDelegate, UICollectionViewData
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if let cell: TimeLIneCell = cell as? TimeLIneCell {
+            cell.disposer?.dispose()
+        }
+    }
+    
     func configure(_ cell: TimeLIneCell, atIndexPath indexPath: IndexPath) {
         if let user: FirebaseApp.User = self.dataSource?.objects[indexPath.item] {
             cell.mutterLabel.text = user.mutter
