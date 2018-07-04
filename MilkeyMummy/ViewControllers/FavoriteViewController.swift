@@ -82,6 +82,12 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
         return .leastNormalMagnitude
     }
     
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let cell: FavoriteCell = cell as? FavoriteCell {
+            cell.disposer?.dispose()
+        }
+    }
+    
 }
 
 extension FavoriteViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
