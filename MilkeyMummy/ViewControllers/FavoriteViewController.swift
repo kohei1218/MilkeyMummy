@@ -10,6 +10,7 @@ import UIKit
 import Salada
 import Firebase
 import DZNEmptyDataSet
+import RAMAnimatedTabBarController
 
 class FavoriteViewController: UIViewController {
     
@@ -18,12 +19,22 @@ class FavoriteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButtonItem
         setTableView()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let animatedTabBar = self.tabBarController as! RAMAnimatedTabBarController
+        animatedTabBar.animationTabBarHidden(false)
+        if let indexPathForSelectedRow = favoriteTableView.indexPathForSelectedRow {
+            favoriteTableView.deselectRow(at: indexPathForSelectedRow, animated: true)
+        }
     }
     
     private func setTableView() {
@@ -85,6 +96,16 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let cell: FavoriteCell = cell as? FavoriteCell {
             cell.disposer?.dispose()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView,didSelectRowAt indexPath: IndexPath) {
+        if let user: FirebaseApp.User = self.dataSource?.objects[indexPath.item] {
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let naviView = storyboard.instantiateViewController(withIdentifier: "timeLineDetailNavigation") as! UINavigationController
+            let view = naviView.topViewController as! TimeLineDetailViewController
+            view.opponentUser = user
+            self.navigationController?.pushViewController(view, animated: true)
         }
     }
     
