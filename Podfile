@@ -20,6 +20,7 @@ target 'MilkeyMummy' do
   pod 'RAMAnimatedTabBarController'
   pod 'MIBlurPopup'
   pod 'FirebaseUI/Storage', '~> 3.0'
+  pod 'DZNEmptyDataSet'
 
   # Pods for MilkeyMummy
 
