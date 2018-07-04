@@ -28,6 +28,9 @@
 		5556814F20D7BFE30030B90F /* UITextField+exstention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5556814E20D7BFE30030B90F /* UITextField+exstention.swift */; };
 		5556815320D7C6880030B90F /* UITextView+exstention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5556815220D7C6880030B90F /* UITextView+exstention.swift */; };
 		5556815520D8EC6A0030B90F /* PostMutterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5556815420D8EC6A0030B90F /* PostMutterViewController.swift */; };
+		558513EA20E15D61001982D9 /* LoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558513E920E15D61001982D9 /* LoveButton.swift */; };
+		558513EC20E23697001982D9 /* User-Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558513EB20E23696001982D9 /* User-Favorite.swift */; };
+		559A350820E0DF69000B302F /* TimeLineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A350720E0DF69000B302F /* TimeLineDetailViewController.swift */; };
 		559F1BB720D1011500939E95 /* UIImageView+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559F1BB620D1011500939E95 /* UIImageView+AlamofireImage.swift */; };
 		559F1BB920D10BDA00939E95 /* RegistInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559F1BB820D10BDA00939E95 /* RegistInfoViewController.swift */; };
 		7CE6795270B2146E097D4E24 /* Pods_MilkeyMummy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3955F4ABC00D016156AE482 /* Pods_MilkeyMummy.framework */; };
@@ -57,6 +60,9 @@
 		5556814E20D7BFE30030B90F /* UITextField+exstention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+exstention.swift"; sourceTree = "<group>"; };
 		5556815220D7C6880030B90F /* UITextView+exstention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+exstention.swift"; sourceTree = "<group>"; };
 		5556815420D8EC6A0030B90F /* PostMutterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMutterViewController.swift; sourceTree = "<group>"; };
+		558513E920E15D61001982D9 /* LoveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveButton.swift; sourceTree = "<group>"; };
+		558513EB20E23696001982D9 /* User-Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User-Favorite.swift"; sourceTree = "<group>"; };
+		559A350720E0DF69000B302F /* TimeLineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineDetailViewController.swift; sourceTree = "<group>"; };
 		559F1BB620D1011500939E95 /* UIImageView+AlamofireImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+AlamofireImage.swift"; sourceTree = "<group>"; };
 		559F1BB820D10BDA00939E95 /* RegistInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistInfoViewController.swift; sourceTree = "<group>"; };
 		C4744C64275D79667383646D /* Pods-MilkeyMummy.develop_release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkeyMummy.develop_release.xcconfig"; path = "Pods/Target Support Files/Pods-MilkeyMummy/Pods-MilkeyMummy.develop_release.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +153,7 @@
 				559F1BB820D10BDA00939E95 /* RegistInfoViewController.swift */,
 				5556814720D3F8BA0030B90F /* TimeLineViewController.swift */,
 				5556815420D8EC6A0030B90F /* PostMutterViewController.swift */,
+				559A350720E0DF69000B302F /* TimeLineDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -174,6 +181,7 @@
 			children = (
 				55370C6D20CFBC8D00032B82 /* User.swift */,
 				55370C6F20CFC9BB00032B82 /* Group.swift */,
+				558513EB20E23696001982D9 /* User-Favorite.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -183,6 +191,7 @@
 			children = (
 				5556814A20D3F9E60030B90F /* TimeLineCell.xib */,
 				5556814C20D3FD060030B90F /* TimeLIneCell.swift */,
+				558513E920E15D61001982D9 /* LoveButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -366,6 +375,8 @@
 			files = (
 				5556815320D7C6880030B90F /* UITextView+exstention.swift in Sources */,
 				5556814F20D7BFE30030B90F /* UITextField+exstention.swift in Sources */,
+				559A350820E0DF69000B302F /* TimeLineDetailViewController.swift in Sources */,
+				558513EA20E15D61001982D9 /* LoveButton.swift in Sources */,
 				55370C7020CFC9BB00032B82 /* Group.swift in Sources */,
 				5556813F20D253670030B90F /* UIColor+exstension.swift in Sources */,
 				552B816020CE969500E8C71A /* RegistViewController.swift in Sources */,
@@ -373,6 +384,7 @@
 				559F1BB920D10BDA00939E95 /* RegistInfoViewController.swift in Sources */,
 				5556814820D3F8BA0030B90F /* TimeLineViewController.swift in Sources */,
 				552B813420CE3F1A00E8C71A /* ViewController.swift in Sources */,
+				558513EC20E23697001982D9 /* User-Favorite.swift in Sources */,
 				55370C6E20CFBC8D00032B82 /* User.swift in Sources */,
 				552B815320CE431E00E8C71A /* Environment.swift in Sources */,
 				5556814D20D3FD060030B90F /* TimeLIneCell.swift in Sources */,

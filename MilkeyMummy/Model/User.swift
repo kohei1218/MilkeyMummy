@@ -30,6 +30,15 @@ extension FirebaseApp {
         @objc dynamic var mutter: String?
         @objc dynamic var profile: String?
         @objc dynamic var mutterDate: Date?
+        @objc dynamic var height: Int = 0
+        @objc dynamic var figure: String?
+        @objc dynamic var future: String?
+        @objc dynamic var hopePlace: String?
+        @objc dynamic var hobby: String?
+        @objc dynamic var type: String?
+        @objc dynamic var holiday: String?
+        let favorites: Favorites = []
+        let favoritter: Favoritter = []
     }
 }
 
@@ -51,23 +60,22 @@ extension FirebaseApp.User {
         })
     }
     
+    //いいね
+    public func favorite() {
+        FirebaseApp.User.current { (me) in
+            guard let me = me else { return }
+            self.favoritter.insert(me)
+            me.favorites.insert(self)
+        }
+    }
+    
+    //いいね解除(現状機能なし)
+    public func unfavorite() {
+        FirebaseApp.User.current { (me) in
+            guard let me = me else { return }
+            self.favoritter.remove(me)
+            me.favorites.remove(self)
+        }
+    }
+    
 }
-
-//class DataClass: Codable {
-//    let name, gender, url, work, position, residence, seeDesire, liquor, cigarette: String
-//    let age, lowIncome, highIncome: Int
-//    let groups: Set<String>
-//    let birth: Date
-//    let thumbnail: File
-//
-//    init(name: String, gender: String, url: String, work: String, position: String, residence: String, seeDesire: String, liquor: String, cigarette: String) {
-//        self.sell = sell
-//        self.buy = buy
-//        self.high = high
-//        self.low = low
-//        self.last = last
-//        self.vol = vol
-//        self.timestamp = timestamp
-//    }
-//}
-

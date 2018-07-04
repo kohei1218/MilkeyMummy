@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import Salada
+import Firebase
 
 class TimeLIneCell: UICollectionViewCell {
     
     @IBOutlet weak var profileImageView: UIImageView!
     
     @IBOutlet weak var profileLabel: UILabel!
+    @IBOutlet weak var mutterLabel: UILabel!
+    
+    var disposer: Disposer<FirebaseApp.User>?
     
     override func awakeFromNib() {
         super.awakeFromNib()
