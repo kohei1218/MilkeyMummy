@@ -14,8 +14,10 @@ import RAMAnimatedTabBarController
 import IBAnimatable
 
 class TimeLineDetailViewController: UIViewController {
-
-    var opponentUser:FirebaseApp.User?
+    
+    var opponentUser: FirebaseApp.User?
+    var user: FirebaseApp.User?
+    var isFavorited: Bool = false
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nickNameLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
@@ -43,17 +45,31 @@ class TimeLineDetailViewController: UIViewController {
         setupUI()
         loveButton.isLoved = false
         FirebaseApp.User.current { user in
-            Favorites.child((user?.id)!).contains((self.opponentUser?.id)!, block: { bool in
-                if bool {
-                    self.loveButton.isLoved = true
-                    self.favoriteButton.setTitle("いいね！済み", for: .normal)
-                    self.favoriteButton.isEnabled = false
-                }
+            self.user = user
+            Favorites.child((user?.id)!).contains((self.opponentUser?.id)!, block: { isFavorites in
+                Favoritter.child((user?.id)!).contains((self.opponentUser?.id)!, block: { isFavoritter in
+                    if isFavorites {
+                        if isFavoritter {
+                            self.loveButton.isLoved = true
+                            self.favoriteButton.setTitle("マッチング済み", for: .normal)
+                            self.favoriteButton.isEnabled = false
+                        } else {
+                            self.loveButton.isLoved = true
+                            self.favoriteButton.setTitle("いいね！済み", for: .normal)
+                            self.favoriteButton.isEnabled = false
+                        }
+                    } else {
+                        if isFavoritter {
+                            self.isFavorited = true
+                            self.favoriteButton.setTitle("いいね！されています！", for: .normal)
+                        }
+                    }
+                })
             })
         }
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -92,9 +108,20 @@ class TimeLineDetailViewController: UIViewController {
         
     }
     @IBAction func actionFavrotite(_ sender: Any) {
-        loveButton.isLoved = true
-        favoriteButton.setTitle("いいね！済み", for: .normal)
-        favoriteButton.isEnabled = false
+        if let _ = user {
+            if isFavorited {
+                user?.favorite()
+                opponentUser?.matche()
+                loveButton.isLoved = true
+                favoriteButton.setTitle("マッチング済み", for: .normal)
+                favoriteButton.isEnabled = false
+            } else {
+                user?.favorite()
+                loveButton.isLoved = true
+                favoriteButton.setTitle("いいね！済み", for: .normal)
+                favoriteButton.isEnabled = false
+            }
+        }
     }
     
 }
