@@ -26,17 +26,29 @@
             </objects>
             <point key="canvasLocation" x="134" y="125"/>
         </scene>
-        <!--View Controller-->
+        <!--いいね-->
         <scene sceneID="SnZ-sW-fyO">
             <objects>
                 <viewController id="W7g-dB-adO" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cfx-Pw-xea">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lvJ-vS-ybN">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aKu-NR-zo0" firstAttribute="trailing" secondItem="lvJ-vS-ybN" secondAttribute="trailing" id="Dgv-BM-0h1"/>
+                            <constraint firstItem="lvJ-vS-ybN" firstAttribute="leading" secondItem="aKu-NR-zo0" secondAttribute="leading" id="Nfr-KJ-REI"/>
+                            <constraint firstItem="lvJ-vS-ybN" firstAttribute="top" secondItem="aKu-NR-zo0" secondAttribute="top" id="lQq-9x-9pQ"/>
+                            <constraint firstItem="aKu-NR-zo0" firstAttribute="bottom" secondItem="lvJ-vS-ybN" secondAttribute="bottom" id="nFU-K1-RFu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="aKu-NR-zo0"/>
                     </view>
-                    <navigationItem key="navigationItem" id="aTB-Af-mMW"/>
+                    <navigationItem key="navigationItem" title="いいね" id="aTB-Af-mMW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TQo-lu-7S0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
