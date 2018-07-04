@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Salada
+import Firebase
 
 class FavoriteCell: UITableViewCell {
 
@@ -18,10 +20,10 @@ class FavoriteCell: UITableViewCell {
     @IBOutlet weak var userFigureLabel: UILabel!
     @IBOutlet weak var userMutterLabel: UILabel!
     
+    var disposer: Disposer<FirebaseApp.User>?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

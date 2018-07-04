@@ -29,7 +29,7 @@
         <!--いいね-->
         <scene sceneID="SnZ-sW-fyO">
             <objects>
-                <viewController id="W7g-dB-adO" sceneMemberID="viewController">
+                <viewController id="W7g-dB-adO" customClass="FavoriteViewController" customModule="MilkeyMummy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cfx-Pw-xea">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,6 +37,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lvJ-vS-ybN">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="W7g-dB-adO" id="32o-Hg-C7P"/>
+                                    <outlet property="delegate" destination="W7g-dB-adO" id="0iZ-XP-T7o"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -49,6 +53,9 @@
                         <viewLayoutGuide key="safeArea" id="aKu-NR-zo0"/>
                     </view>
                     <navigationItem key="navigationItem" title="いいね" id="aTB-Af-mMW"/>
+                    <connections>
+                        <outlet property="favoriteTableView" destination="lvJ-vS-ybN" id="zjq-fY-N9q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TQo-lu-7S0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
