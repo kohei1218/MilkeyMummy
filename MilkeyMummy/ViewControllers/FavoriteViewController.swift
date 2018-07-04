@@ -76,4 +76,8 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
         return 100.0
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return .leastNormalMagnitude
+    }
+    
 }
