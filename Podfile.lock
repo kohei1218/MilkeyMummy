@@ -14,6 +14,7 @@ PODS:
   - BoringSSL/Implementation (10.0.5):
     - BoringSSL/Interface (= 10.0.5)
   - BoringSSL/Interface (10.0.5)
+  - DZNEmptyDataSet (1.8.1)
   - FBSDKCoreKit (4.33.0):
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.33.0):
@@ -113,6 +114,7 @@ PODS:
 
 DEPENDENCIES:
   - AlamofireImage
+  - DZNEmptyDataSet
   - FBSDKLoginKit
   - Firebase/Auth
   - Firebase/Core
@@ -134,6 +136,7 @@ SPEC REPOS:
     - AlamofireImage
     - Bolts
     - BoringSSL
+    - DZNEmptyDataSet
     - FBSDKCoreKit
     - FBSDKLoginKit
     - Firebase
@@ -168,6 +171,7 @@ SPEC CHECKSUMS:
   AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   BoringSSL: cf3f1793eb6e3c445c4d150456341f149c268a35
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FBSDKCoreKit: 572b047a7e029bc44542bcf8a59414e7ff2b543e
   FBSDKLoginKit: 88cb456349cfb3b554427ce4f8b43729d85dfb40
   Firebase: 25ed0412036d7d008568d1fb4d2e9d81ea8a0a2c
@@ -197,6 +201,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TextFieldEffects: 4ee41b5216e674d55fb6ac25107bf1af7629176f
 
-PODFILE CHECKSUM: ea02e1110dd17b678027bf2bde05a9a8add9219d
+PODFILE CHECKSUM: 336b0a98b64989ce1e4ddb69d9412ea77bc0380f
 
 COCOAPODS: 1.5.3

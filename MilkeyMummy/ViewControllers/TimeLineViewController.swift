@@ -38,7 +38,6 @@ class TimeLineViewController: UIViewController {
         FirebaseApp.User.current { user in
             self.collectionView.register(UINib(nibName: "TimeLineCell", bundle: nil), forCellWithReuseIdentifier: "cell")
             let options: Options = Options()
-            options.limit = 10
             if user?.gender == "male" {
                 options.predicate = NSPredicate(format: "gender == 'female'")
             } else {

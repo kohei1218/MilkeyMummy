@@ -33,6 +33,9 @@
 		559A350820E0DF69000B302F /* TimeLineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A350720E0DF69000B302F /* TimeLineDetailViewController.swift */; };
 		559F1BB720D1011500939E95 /* UIImageView+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559F1BB620D1011500939E95 /* UIImageView+AlamofireImage.swift */; };
 		559F1BB920D10BDA00939E95 /* RegistInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559F1BB820D10BDA00939E95 /* RegistInfoViewController.swift */; };
+		55BD969420ECADFC0083657F /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD969320ECADFC0083657F /* FavoriteViewController.swift */; };
+		55BD969620ECAE470083657F /* FavoriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BD969520ECAE470083657F /* FavoriteCell.xib */; };
+		55BD969820ECB06C0083657F /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD969720ECB06C0083657F /* FavoriteCell.swift */; };
 		7CE6795270B2146E097D4E24 /* Pods_MilkeyMummy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3955F4ABC00D016156AE482 /* Pods_MilkeyMummy.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +68,9 @@
 		559A350720E0DF69000B302F /* TimeLineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineDetailViewController.swift; sourceTree = "<group>"; };
 		559F1BB620D1011500939E95 /* UIImageView+AlamofireImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+AlamofireImage.swift"; sourceTree = "<group>"; };
 		559F1BB820D10BDA00939E95 /* RegistInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistInfoViewController.swift; sourceTree = "<group>"; };
+		55BD969320ECADFC0083657F /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		55BD969520ECAE470083657F /* FavoriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteCell.xib; sourceTree = "<group>"; };
+		55BD969720ECB06C0083657F /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		C4744C64275D79667383646D /* Pods-MilkeyMummy.develop_release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkeyMummy.develop_release.xcconfig"; path = "Pods/Target Support Files/Pods-MilkeyMummy/Pods-MilkeyMummy.develop_release.xcconfig"; sourceTree = "<group>"; };
 		D3955F4ABC00D016156AE482 /* Pods_MilkeyMummy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MilkeyMummy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D88755DE3B5F3BB9F564E57C /* Pods-MilkeyMummy.staging_debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkeyMummy.staging_debug.xcconfig"; path = "Pods/Target Support Files/Pods-MilkeyMummy/Pods-MilkeyMummy.staging_debug.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +160,7 @@
 				5556814720D3F8BA0030B90F /* TimeLineViewController.swift */,
 				5556815420D8EC6A0030B90F /* PostMutterViewController.swift */,
 				559A350720E0DF69000B302F /* TimeLineDetailViewController.swift */,
+				55BD969320ECADFC0083657F /* FavoriteViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -192,6 +199,8 @@
 				5556814A20D3F9E60030B90F /* TimeLineCell.xib */,
 				5556814C20D3FD060030B90F /* TimeLIneCell.swift */,
 				558513E920E15D61001982D9 /* LoveButton.swift */,
+				55BD969520ECAE470083657F /* FavoriteCell.xib */,
+				55BD969720ECB06C0083657F /* FavoriteCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -276,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				552B815C20CE88A700E8C71A /* GoogleService-Info-develop-release.plist in Resources */,
+				55BD969620ECAE470083657F /* FavoriteCell.xib in Resources */,
 				552B813F20CE3F1B00E8C71A /* LaunchScreen.storyboard in Resources */,
 				5556814B20D3F9E60030B90F /* TimeLineCell.xib in Resources */,
 				552B813C20CE3F1B00E8C71A /* Assets.xcassets in Resources */,
@@ -299,6 +309,7 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -324,6 +335,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
@@ -382,11 +394,13 @@
 				552B816020CE969500E8C71A /* RegistViewController.swift in Sources */,
 				559F1BB720D1011500939E95 /* UIImageView+AlamofireImage.swift in Sources */,
 				559F1BB920D10BDA00939E95 /* RegistInfoViewController.swift in Sources */,
+				55BD969820ECB06C0083657F /* FavoriteCell.swift in Sources */,
 				5556814820D3F8BA0030B90F /* TimeLineViewController.swift in Sources */,
 				552B813420CE3F1A00E8C71A /* ViewController.swift in Sources */,
 				558513EC20E23697001982D9 /* User-Favorite.swift in Sources */,
 				55370C6E20CFBC8D00032B82 /* User.swift in Sources */,
 				552B815320CE431E00E8C71A /* Environment.swift in Sources */,
+				55BD969420ECADFC0083657F /* FavoriteViewController.swift in Sources */,
 				5556814D20D3FD060030B90F /* TimeLIneCell.swift in Sources */,
 				552B813220CE3F1A00E8C71A /* AppDelegate.swift in Sources */,
 				552B813A20CE3F1A00E8C71A /* MilkeyMummy.xcdatamodeld in Sources */,
