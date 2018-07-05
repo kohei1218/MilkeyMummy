@@ -21,6 +21,7 @@ target 'MilkeyMummy' do
   pod 'MIBlurPopup'
   pod 'FirebaseUI/Storage', '~> 3.0'
   pod 'DZNEmptyDataSet'
+  pod 'JSQMessagesViewController'
 
   # Pods for MilkeyMummy
 

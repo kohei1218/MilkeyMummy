@@ -39,6 +39,8 @@ extension FirebaseApp {
         @objc dynamic var holiday: String?
         let favorites: Favorites = []
         let favoritter: Favoritter = []
+        let matches: Matches = []
+        let rooms: Rooms = []
     }
 }
 
@@ -75,6 +77,23 @@ extension FirebaseApp.User {
             guard let me = me else { return }
             self.favoritter.remove(me)
             me.favorites.remove(self)
+        }
+    }
+    
+    public func matche() {
+        FirebaseApp.User.current { (me) in
+            guard let me = me else { return }
+            self.matches.insert(me)
+            me.matches.insert(self)
+            let room: Room
+            if me.gender == "male" {
+                room = Room(id: me.id + self.id)!
+            } else {
+                room = Room(id: self.id + me.id)!
+            }
+            self.rooms.insert(room)
+            me.rooms.insert(room)
+            room.save()
         }
     }
     

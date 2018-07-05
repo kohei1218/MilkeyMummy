@@ -1,8 +1,8 @@
 //
-//  FavoriteViewController.swift
+//  MessageListViewController.swift
 //  MilkeyMummy
 //
-//  Created by 齋藤　航平 on 2018/07/04.
+//  Created by 齋藤　航平 on 2018/07/05.
 //  Copyright © 2018年 齋藤　航平. All rights reserved.
 //
 
@@ -12,12 +12,13 @@ import Firebase
 import DZNEmptyDataSet
 import RAMAnimatedTabBarController
 
-class FavoriteViewController: UIViewController {
+class MessageListViewController: UIViewController {
     
-    @IBOutlet weak var favoriteTableView: UITableView!
+    @IBOutlet weak var messageListTableView: UITableView!
     private var dataSource: DataSource<FirebaseApp.User>?
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         super.viewDidLoad()
         let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButtonItem
@@ -32,18 +33,18 @@ class FavoriteViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         let animatedTabBar = self.tabBarController as! RAMAnimatedTabBarController
         animatedTabBar.animationTabBarHidden(false)
-        if let indexPathForSelectedRow = favoriteTableView.indexPathForSelectedRow {
-            favoriteTableView.deselectRow(at: indexPathForSelectedRow, animated: true)
+        if let indexPathForSelectedRow = messageListTableView.indexPathForSelectedRow {
+            messageListTableView.deselectRow(at: indexPathForSelectedRow, animated: true)
         }
     }
     
     private func setTableView() {
-        self.favoriteTableView.tableFooterView = UIView(frame: .zero)
+        self.messageListTableView.tableFooterView = UIView(frame: .zero)
         FirebaseApp.User.current { user in
-            self.favoriteTableView.register(UINib(nibName: "FavoriteCell", bundle: nil), forCellReuseIdentifier: "cell")
+            self.messageListTableView.register(UINib(nibName: "MessageListCell", bundle: nil), forCellReuseIdentifier: "cell")
             let options: Options = Options()
-            self.dataSource = DataSource(reference: (user?.favoritter.ref)!, options: options, block: { [weak self](changes) in
-                guard let tableView: UITableView = self?.favoriteTableView else { return }
+            self.dataSource = DataSource(reference: (user?.matches.ref)!, options: options, block: { [weak self](changes) in
+                guard let tableView: UITableView = self?.messageListTableView else { return }
                 
                 switch changes {
                 case .initial:
@@ -63,13 +64,13 @@ class FavoriteViewController: UIViewController {
 
 }
 
-extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
+extension MessageListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataSource?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: FavoriteCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FavoriteCell
+        let cell: MessageListCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MessageListCell
         if let user = self.dataSource?.objects[indexPath.item] {
             cell.userNameLabel.text = user.nickName
             cell.userAgeLabel.text = user.age.description + "歳"
@@ -94,7 +95,7 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if let cell: FavoriteCell = cell as? FavoriteCell {
+        if let cell: MessageListCell = cell as? MessageListCell {
             cell.disposer?.dispose()
         }
     }
@@ -102,8 +103,8 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView,didSelectRowAt indexPath: IndexPath) {
         if let user: FirebaseApp.User = self.dataSource?.objects[indexPath.item] {
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let naviView = storyboard.instantiateViewController(withIdentifier: "timeLineDetailNavigation") as! UINavigationController
-            let view = naviView.topViewController as! TimeLineDetailViewController
+            let naviView = storyboard.instantiateViewController(withIdentifier: "messageViewNavigation") as! UINavigationController
+            let view = naviView.topViewController as! MessageViewController
             view.opponentUser = user
             self.navigationController?.pushViewController(view, animated: true)
         }
@@ -111,10 +112,10 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-extension FavoriteViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+extension MessageListViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
-        let text = "まだいいね！されていません。"
+        let text = "まだマッチしていません。"
         let font = UIFont(name: "Helvetica", size: 20)!
         return NSAttributedString(string: text, attributes: [NSAttributedStringKey.font: font])
     }
