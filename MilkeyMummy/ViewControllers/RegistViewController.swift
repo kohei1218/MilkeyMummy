@@ -83,7 +83,6 @@ extension RegistViewController: FBSDKLoginButtonDelegate {
     
     //firebaseにuser情報保存
     func saveUserData(dictionary: NSDictionary) {
-        
         let group: Group = Group(id: self.isMale ? "males" : "females")!
         group.name = isMale ? "males" : "females"
         group.save { (ref, error) in

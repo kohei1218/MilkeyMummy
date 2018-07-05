@@ -39,6 +39,9 @@
 		55BD969A20ED2E7A0083657F /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD969920ED2E7A0083657F /* MessageViewController.swift */; };
 		55BD969C20ED38530083657F /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD969B20ED38530083657F /* Message.swift */; };
 		55BD969E20ED38CC0083657F /* User-Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD969D20ED38CC0083657F /* User-Match.swift */; };
+		55BD96A020EDC2B20083657F /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD969F20EDC2B20083657F /* Room.swift */; };
+		55BD96A220EDC2EE0083657F /* Room-Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD96A120EDC2EE0083657F /* Room-Message.swift */; };
+		55BD96A420EDC3C10083657F /* User-Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD96A320EDC3C10083657F /* User-Room.swift */; };
 		7CE6795270B2146E097D4E24 /* Pods_MilkeyMummy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3955F4ABC00D016156AE482 /* Pods_MilkeyMummy.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +80,9 @@
 		55BD969920ED2E7A0083657F /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		55BD969B20ED38530083657F /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		55BD969D20ED38CC0083657F /* User-Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User-Match.swift"; sourceTree = "<group>"; };
+		55BD969F20EDC2B20083657F /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		55BD96A120EDC2EE0083657F /* Room-Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room-Message.swift"; sourceTree = "<group>"; };
+		55BD96A320EDC3C10083657F /* User-Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User-Room.swift"; sourceTree = "<group>"; };
 		C4744C64275D79667383646D /* Pods-MilkeyMummy.develop_release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkeyMummy.develop_release.xcconfig"; path = "Pods/Target Support Files/Pods-MilkeyMummy/Pods-MilkeyMummy.develop_release.xcconfig"; sourceTree = "<group>"; };
 		D3955F4ABC00D016156AE482 /* Pods_MilkeyMummy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MilkeyMummy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D88755DE3B5F3BB9F564E57C /* Pods-MilkeyMummy.staging_debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkeyMummy.staging_debug.xcconfig"; path = "Pods/Target Support Files/Pods-MilkeyMummy/Pods-MilkeyMummy.staging_debug.xcconfig"; sourceTree = "<group>"; };
@@ -196,8 +202,11 @@
 				55370C6D20CFBC8D00032B82 /* User.swift */,
 				55370C6F20CFC9BB00032B82 /* Group.swift */,
 				55BD969B20ED38530083657F /* Message.swift */,
+				55BD969F20EDC2B20083657F /* Room.swift */,
 				558513EB20E23696001982D9 /* User-Favorite.swift */,
 				55BD969D20ED38CC0083657F /* User-Match.swift */,
+				55BD96A120EDC2EE0083657F /* Room-Message.swift */,
+				55BD96A320EDC3C10083657F /* User-Room.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -412,16 +421,19 @@
 				552B813420CE3F1A00E8C71A /* ViewController.swift in Sources */,
 				55BD969E20ED38CC0083657F /* User-Match.swift in Sources */,
 				558513EC20E23697001982D9 /* User-Favorite.swift in Sources */,
+				55BD96A420EDC3C10083657F /* User-Room.swift in Sources */,
 				55370C6E20CFBC8D00032B82 /* User.swift in Sources */,
 				552B815320CE431E00E8C71A /* Environment.swift in Sources */,
 				55BD969420ECADFC0083657F /* FavoriteViewController.swift in Sources */,
 				5556814D20D3FD060030B90F /* TimeLIneCell.swift in Sources */,
 				55BD969C20ED38530083657F /* Message.swift in Sources */,
+				55BD96A220EDC2EE0083657F /* Room-Message.swift in Sources */,
 				552B813220CE3F1A00E8C71A /* AppDelegate.swift in Sources */,
 				55BD969A20ED2E7A0083657F /* MessageViewController.swift in Sources */,
 				552B813A20CE3F1A00E8C71A /* MilkeyMummy.xcdatamodeld in Sources */,
 				5556814620D297740030B90F /* Const.swift in Sources */,
 				5556815520D8EC6A0030B90F /* PostMutterViewController.swift in Sources */,
+				55BD96A020EDC2B20083657F /* Room.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

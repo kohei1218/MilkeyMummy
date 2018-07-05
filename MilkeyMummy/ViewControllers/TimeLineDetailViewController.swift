@@ -46,6 +46,7 @@ class TimeLineDetailViewController: UIViewController {
         loveButton.isLoved = false
         FirebaseApp.User.current { user in
             self.user = user
+            self.opponentUser?.matche()
             Favorites.child((user?.id)!).contains((self.opponentUser?.id)!, block: { isFavorites in
                 Favoritter.child((user?.id)!).contains((self.opponentUser?.id)!, block: { isFavoritter in
                     if isFavorites {

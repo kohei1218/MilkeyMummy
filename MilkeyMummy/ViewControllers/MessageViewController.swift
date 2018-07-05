@@ -8,9 +8,11 @@
 
 import UIKit
 import JSQMessagesViewController
+import Firebase
 
 class MessageViewController: JSQMessagesViewController {
     
+    var ref: DatabaseReference!
     // メッセージ内容に関するプロパティ
     var messages: [JSQMessage]?
     // 背景画像に関するプロパティ
@@ -22,13 +24,31 @@ class MessageViewController: JSQMessagesViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        ref = Database.database().reference()
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setupFirebase() {
+        // DatabaseReferenceのインスタンス化
+        ref = Database.database().reference()
+        
+        // 最新25件のデータをデータベースから取得する
+        // 最新のデータが追加されるたびに最新データを取得する
+        ref.queryLimited(toLast: 25).observe(DataEventType.childAdded, with: { (snapshot) -> Void in
+            let snapshotValue = snapshot.value as! NSDictionary
+            let text = snapshotValue["text"] as! String
+            let sender = snapshotValue["from"] as! String
+            let name = snapshotValue["name"] as! String
+            print(snapshot.value!)
+            let message = JSQMessage(senderId: sender, displayName: name, text: text)
+            self.messages?.append(message!)
+            self.finishSendingMessage()
+        })
     }
     
     // Sendボタンが押された時に呼ばれるメソッド
@@ -38,10 +58,10 @@ class MessageViewController: JSQMessagesViewController {
         self.finishReceivingMessage(animated: true)
         
         //firebaseにデータを送信、保存する
-//        let post1 = ["from": senderId, "name": senderDisplayName, "text":text]
-//        let post1Ref = ref.childByAutoId()
-//        post1Ref.setValue(post1)
-//        self.finishSendingMessage(animated: true)
+        let post1: [String: Any] = ["senderId": senderId, "text": text, "date": ServerValue.timestamp()]
+        let post1Ref = ref.childByAutoId()
+        post1Ref.setValue(post1)
+        self.finishSendingMessage(animated: true)
         
         //キーボードを閉じる
         self.view.endEditing(true)

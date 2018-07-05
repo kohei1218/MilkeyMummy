@@ -43,7 +43,7 @@ class TimeLineViewController: UIViewController {
             } else {
                 options.predicate = NSPredicate(format: "gender == 'male'")
             }
-            options.sortDescirptors = [NSSortDescriptor(key: "mutterDate", ascending: false)]
+//            options.sortDescirptors = [NSSortDescriptor(key: "mutterDate", ascending: false)]
             self.dataSource = DataSource(reference: FirebaseApp.User.databaseRef, options: options, block: { [weak self](changes) in
                 guard let collectionView: UICollectionView = self?.collectionView else { return }
                 switch changes {
@@ -51,6 +51,8 @@ class TimeLineViewController: UIViewController {
                     self?.collectionView.reloadData()
                 case .update(let deletions, let insertions, let modifications):
                     collectionView.performBatchUpdates({
+                        print("modi:", modifications.count)
+                        print("inser:", insertions.count)
                         collectionView.insertItems(at: insertions.map { IndexPath(row: $0, section: 0) })
                         collectionView.deleteItems(at: deletions.map { IndexPath(row: $0, section: 0) })
                         collectionView.reloadItems(at: modifications.map { IndexPath(row: $0, section: 0) })
@@ -80,6 +82,7 @@ extension TimeLineViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:TimeLIneCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! TimeLIneCell
+        print("pathpath:", indexPath.item)
         configure(cell, atIndexPath: indexPath)
         return cell
     }
@@ -113,7 +116,16 @@ extension TimeLineViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func configure(_ cell: TimeLIneCell, atIndexPath indexPath: IndexPath) {
+//        cell.disposer = self.dataSource?.observeObject(at: indexPath.item, block: { (user) in
+//            cell.mutterLabel.text = user?.mutter
+//            cell.profileLabel.text = (user?.nickName)! + ""
+//            if let ref: StorageReference = user?.thumbnail?.ref {
+//                cell.profileImageView.sd_setImage(with: ref, placeholderImage: UIImage(named: "loading-appcolor"))
+//            }
+//        })
         if let user: FirebaseApp.User = self.dataSource?.objects[indexPath.item] {
+            print("path:", indexPath.item)
+            print("nickname:", user.nickName)
             cell.mutterLabel.text = user.mutter
             cell.profileLabel.text = (user.nickName)! + ""
             if let ref: StorageReference = user.thumbnail?.ref {
