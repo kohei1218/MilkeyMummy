@@ -45,6 +45,7 @@
 		55BD96A620EDE36F0083657F /* MessageListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BD96A520EDE36F0083657F /* MessageListCell.xib */; };
 		55BD96A820EDE3F80083657F /* MessageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD96A720EDE3F80083657F /* MessageListCell.swift */; };
 		55BD96AA20EDE51F0083657F /* MessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD96A920EDE51F0083657F /* MessageListViewController.swift */; };
+		55BD96AC20EE68000083657F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD96AB20EE68000083657F /* ProfileViewController.swift */; };
 		7CE6795270B2146E097D4E24 /* Pods_MilkeyMummy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3955F4ABC00D016156AE482 /* Pods_MilkeyMummy.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,7 @@
 		55BD96A520EDE36F0083657F /* MessageListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageListCell.xib; sourceTree = "<group>"; };
 		55BD96A720EDE3F80083657F /* MessageListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListCell.swift; sourceTree = "<group>"; };
 		55BD96A920EDE51F0083657F /* MessageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListViewController.swift; sourceTree = "<group>"; };
+		55BD96AB20EE68000083657F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C4744C64275D79667383646D /* Pods-MilkeyMummy.develop_release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkeyMummy.develop_release.xcconfig"; path = "Pods/Target Support Files/Pods-MilkeyMummy/Pods-MilkeyMummy.develop_release.xcconfig"; sourceTree = "<group>"; };
 		D3955F4ABC00D016156AE482 /* Pods_MilkeyMummy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MilkeyMummy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D88755DE3B5F3BB9F564E57C /* Pods-MilkeyMummy.staging_debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkeyMummy.staging_debug.xcconfig"; path = "Pods/Target Support Files/Pods-MilkeyMummy/Pods-MilkeyMummy.staging_debug.xcconfig"; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				55BD969320ECADFC0083657F /* FavoriteViewController.swift */,
 				55BD969920ED2E7A0083657F /* MessageViewController.swift */,
 				55BD96A920EDE51F0083657F /* MessageListViewController.swift */,
+				55BD96AB20EE68000083657F /* ProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				559F1BB920D10BDA00939E95 /* RegistInfoViewController.swift in Sources */,
 				55BD969820ECB06C0083657F /* FavoriteCell.swift in Sources */,
 				5556814820D3F8BA0030B90F /* TimeLineViewController.swift in Sources */,
+				55BD96AC20EE68000083657F /* ProfileViewController.swift in Sources */,
 				552B813420CE3F1A00E8C71A /* ViewController.swift in Sources */,
 				55BD969E20ED38CC0083657F /* User-Match.swift in Sources */,
 				558513EC20E23697001982D9 /* User-Favorite.swift in Sources */,

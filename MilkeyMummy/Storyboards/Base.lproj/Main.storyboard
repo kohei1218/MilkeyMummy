@@ -103,14 +103,79 @@
         <!--プロフィール-->
         <scene sceneID="KQ0-sH-0m1">
             <objects>
-                <viewController id="NOG-tH-H3V" sceneMemberID="viewController">
+                <viewController id="NOG-tH-H3V" customClass="ProfileViewController" customModule="MilkeyMummy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sds-th-Tyc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fGA-fs-6Ag">
+                                <rect key="frame" x="0.0" y="64" width="375" height="180"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CzL-0T-23I" customClass="AnimatableImageView" customModule="IBAnimatable">
+                                        <rect key="frame" x="147" y="50" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="EBb-Ky-Wet"/>
+                                            <constraint firstAttribute="height" constant="80" id="nPk-uC-BGE"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="たかし" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggj-Ow-SUz">
+                                        <rect key="frame" x="164" y="16" width="46" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="よろしく！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8TJ-i1-1cf">
+                                        <rect key="frame" x="143.5" y="146" width="87" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.60784313729999995" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="8TJ-i1-1cf" firstAttribute="top" secondItem="CzL-0T-23I" secondAttribute="bottom" constant="16" id="J8n-46-JZl"/>
+                                    <constraint firstItem="CzL-0T-23I" firstAttribute="top" secondItem="ggj-Ow-SUz" secondAttribute="bottom" constant="16" id="PTr-YU-IzY"/>
+                                    <constraint firstItem="8TJ-i1-1cf" firstAttribute="centerX" secondItem="fGA-fs-6Ag" secondAttribute="centerX" id="RKD-6t-Ndm"/>
+                                    <constraint firstAttribute="height" constant="180" id="Zjd-OC-3Lp"/>
+                                    <constraint firstItem="CzL-0T-23I" firstAttribute="centerX" secondItem="ggj-Ow-SUz" secondAttribute="centerX" id="eBJ-lb-kf7"/>
+                                    <constraint firstItem="CzL-0T-23I" firstAttribute="centerY" secondItem="fGA-fs-6Ag" secondAttribute="centerY" id="fbS-WF-FAX"/>
+                                    <constraint firstItem="CzL-0T-23I" firstAttribute="centerX" secondItem="fGA-fs-6Ag" secondAttribute="centerX" id="hRq-Sp-1ZY"/>
+                                    <constraint firstItem="CzL-0T-23I" firstAttribute="centerX" secondItem="fGA-fs-6Ag" secondAttribute="centerX" id="nz3-LK-zK8"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="SXu-Oj-Wcb">
+                                <rect key="frame" x="0.0" y="244" width="375" height="374"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="NOG-tH-H3V" id="O8S-EF-qGf"/>
+                                    <outlet property="delegate" destination="NOG-tH-H3V" id="M7k-U0-06b"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fGA-fs-6Ag" firstAttribute="top" secondItem="UEs-ZQ-s1e" secondAttribute="top" id="3fw-kP-cjn"/>
+                            <constraint firstItem="SXu-Oj-Wcb" firstAttribute="leading" secondItem="UEs-ZQ-s1e" secondAttribute="leading" id="FS4-6F-Sot"/>
+                            <constraint firstItem="UEs-ZQ-s1e" firstAttribute="trailing" secondItem="fGA-fs-6Ag" secondAttribute="trailing" id="HMK-gF-U4H"/>
+                            <constraint firstItem="UEs-ZQ-s1e" firstAttribute="trailing" secondItem="SXu-Oj-Wcb" secondAttribute="trailing" id="KYX-0i-Qzq"/>
+                            <constraint firstItem="fGA-fs-6Ag" firstAttribute="leading" secondItem="UEs-ZQ-s1e" secondAttribute="leading" id="N4v-er-us3"/>
+                            <constraint firstItem="UEs-ZQ-s1e" firstAttribute="bottom" secondItem="SXu-Oj-Wcb" secondAttribute="bottom" id="ama-HS-qsU"/>
+                            <constraint firstItem="SXu-Oj-Wcb" firstAttribute="top" secondItem="fGA-fs-6Ag" secondAttribute="bottom" id="lFT-2W-hqW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="UEs-ZQ-s1e"/>
                     </view>
                     <navigationItem key="navigationItem" title="プロフィール" id="lQD-t1-2GN"/>
+                    <connections>
+                        <outlet property="mutterLabel" destination="8TJ-i1-1cf" id="DGZ-gX-qDP"/>
+                        <outlet property="nickNameLabel" destination="ggj-Ow-SUz" id="NgI-w4-RIH"/>
+                        <outlet property="profileImageView" destination="CzL-0T-23I" id="cWr-q7-XhS"/>
+                        <outlet property="profileTableView" destination="SXu-Oj-Wcb" id="zbz-mk-Xcl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12j-W8-c6o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
