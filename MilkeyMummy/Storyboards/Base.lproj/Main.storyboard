@@ -71,9 +71,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xwy-Ic-NqI">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Xwy-Ic-NqI">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="uB9-0C-U0H" id="O5e-LV-6ah"/>
                                     <outlet property="delegate" destination="uB9-0C-U0H" id="ikK-I7-dxA"/>
@@ -91,7 +91,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kdY-51-4ew"/>
                     </view>
-                    <navigationItem key="navigationItem" id="cbR-oV-Xsh"/>
+                    <navigationItem key="navigationItem" title="メール" id="cbR-oV-Xsh"/>
                     <connections>
                         <outlet property="messageListTableView" destination="Xwy-Ic-NqI" id="06a-dd-6AV"/>
                     </connections>
@@ -100,7 +100,7 @@
             </objects>
             <point key="canvasLocation" x="2855.1999999999998" y="869.41529235382313"/>
         </scene>
-        <!--View Controller-->
+        <!--プロフィール-->
         <scene sceneID="KQ0-sH-0m1">
             <objects>
                 <viewController id="NOG-tH-H3V" sceneMemberID="viewController">
@@ -110,7 +110,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="UEs-ZQ-s1e"/>
                     </view>
-                    <navigationItem key="navigationItem" id="lQD-t1-2GN"/>
+                    <navigationItem key="navigationItem" title="プロフィール" id="lQD-t1-2GN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12j-W8-c6o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -708,7 +708,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zL4-su-tBp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3667" y="12"/>
+            <point key="canvasLocation" x="3668" y="869"/>
         </scene>
         <!--Message View Controller-->
         <scene sceneID="I7G-BZ-80d">
@@ -724,7 +724,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JQd-ik-RdT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4489" y="11"/>
+            <point key="canvasLocation" x="4529" y="869"/>
         </scene>
         <!--Animated Tab Bar Controller-->
         <scene sceneID="0Ec-N2-Jdr">
