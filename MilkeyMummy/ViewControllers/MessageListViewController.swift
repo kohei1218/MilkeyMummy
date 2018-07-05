@@ -77,7 +77,6 @@ extension MessageListViewController: UITableViewDelegate, UITableViewDataSource 
             cell.userLocateLabel.text = user.residence
             cell.userPositionLabel.text = user.position
             cell.userFigureLabel.text = user.figure
-            cell.userMutterLabel.text = user.mutter
             if let ref: StorageReference = user.thumbnail?.ref {
                 cell.userImageView.sd_setImage(with: ref, placeholderImage: UIImage(named: "nil-image"))
             }

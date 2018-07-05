@@ -219,6 +219,14 @@
                                     <constraint firstAttribute="height" constant="60" id="hjW-FQ-IlB"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="post-button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="nOR-k3-6cG" kind="presentation" id="mui-T1-c5j"/>
                                 </connections>
