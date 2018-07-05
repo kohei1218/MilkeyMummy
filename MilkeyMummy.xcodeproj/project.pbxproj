@@ -46,6 +46,7 @@
 		55BD96A820EDE3F80083657F /* MessageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD96A720EDE3F80083657F /* MessageListCell.swift */; };
 		55BD96AA20EDE51F0083657F /* MessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD96A920EDE51F0083657F /* MessageListViewController.swift */; };
 		55BD96AC20EE68000083657F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD96AB20EE68000083657F /* ProfileViewController.swift */; };
+		55BD96AE20EE8DD10083657F /* UIVew+GradationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD96AD20EE8DD10083657F /* UIVew+GradationView.swift */; };
 		7CE6795270B2146E097D4E24 /* Pods_MilkeyMummy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3955F4ABC00D016156AE482 /* Pods_MilkeyMummy.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		55BD96A720EDE3F80083657F /* MessageListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListCell.swift; sourceTree = "<group>"; };
 		55BD96A920EDE51F0083657F /* MessageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListViewController.swift; sourceTree = "<group>"; };
 		55BD96AB20EE68000083657F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		55BD96AD20EE8DD10083657F /* UIVew+GradationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVew+GradationView.swift"; sourceTree = "<group>"; };
 		C4744C64275D79667383646D /* Pods-MilkeyMummy.develop_release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkeyMummy.develop_release.xcconfig"; path = "Pods/Target Support Files/Pods-MilkeyMummy/Pods-MilkeyMummy.develop_release.xcconfig"; sourceTree = "<group>"; };
 		D3955F4ABC00D016156AE482 /* Pods_MilkeyMummy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MilkeyMummy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D88755DE3B5F3BB9F564E57C /* Pods-MilkeyMummy.staging_debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkeyMummy.staging_debug.xcconfig"; path = "Pods/Target Support Files/Pods-MilkeyMummy/Pods-MilkeyMummy.staging_debug.xcconfig"; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				5556813E20D253670030B90F /* UIColor+exstension.swift */,
 				5556814E20D7BFE30030B90F /* UITextField+exstention.swift */,
 				5556815220D7C6880030B90F /* UITextView+exstention.swift */,
+				55BD96AD20EE8DD10083657F /* UIVew+GradationView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				5556815320D7C6880030B90F /* UITextView+exstention.swift in Sources */,
 				55BD96A820EDE3F80083657F /* MessageListCell.swift in Sources */,
 				5556814F20D7BFE30030B90F /* UITextField+exstention.swift in Sources */,
+				55BD96AE20EE8DD10083657F /* UIVew+GradationView.swift in Sources */,
 				559A350820E0DF69000B302F /* TimeLineDetailViewController.swift in Sources */,
 				558513EA20E15D61001982D9 /* LoveButton.swift in Sources */,
 				55370C7020CFC9BB00032B82 /* Group.swift in Sources */,
