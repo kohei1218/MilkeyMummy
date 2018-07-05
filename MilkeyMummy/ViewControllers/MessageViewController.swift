@@ -33,7 +33,10 @@ class MessageViewController: JSQMessagesViewController {
         
         if #available(iOS 11.0, *){ self.collectionView.contentInsetAdjustmentBehavior = .never; self.collectionView.contentInset = UIEdgeInsetsMake(64, 0, 40, 0); self.collectionView.scrollIndicatorInsets = self.collectionView.contentInset }
         
-        inputToolbar!.contentView!.leftBarButtonItem = nil
+        inputToolbar.contentView.leftBarButtonItem = nil
+        inputToolbar.contentView.rightBarButtonItem.setTitle("送信", for: .normal)
+        inputToolbar.contentView.textView.placeHolder = ""
+        
         automaticallyScrollsToMostRecentMessage = true
         self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSize(width: 0, height: 0)
         
