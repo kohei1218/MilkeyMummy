@@ -29,6 +29,7 @@ class MessageViewController: JSQMessagesViewController {
         super.viewDidLoad()
         let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButtonItem
+        navigationItem.title = opponentUser?.nickName
         
         if #available(iOS 11.0, *){ self.collectionView.contentInsetAdjustmentBehavior = .never; self.collectionView.contentInset = UIEdgeInsetsMake(64, 0, 40, 0); self.collectionView.scrollIndicatorInsets = self.collectionView.contentInset }
         
@@ -39,9 +40,6 @@ class MessageViewController: JSQMessagesViewController {
         let bubbleFactory = JSQMessagesBubbleImageFactory()
         self.incomingBubble = bubbleFactory?.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
         self.outgoingBubble = bubbleFactory?.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
-        
-//        self.incomingAvatar = JSQMessagesAvatarImageFactory.avatarImage(with: UIImage(named: "heart-red")!, diameter: 64)
-//        self.outgoingAvatar = JSQMessagesAvatarImageFactory.avatarImage(with: UIImage(named: "heart-red")!, diameter: 64)
         
         observeFirebase()
     }
@@ -146,8 +144,6 @@ class MessageViewController: JSQMessagesViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = super.collectionView(collectionView, cellForItemAt: indexPath) as! JSQMessagesCollectionViewCell
-        
-//        let message = initMessageData(indexPath: indexPath)
         if let ref: StorageReference = opponentUser?.thumbnail?.ref {
             cell.avatarImageView.sd_setImage(with: ref, placeholderImage: UIImage(named: "loading-appcolor"))
         }
