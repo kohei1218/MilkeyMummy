@@ -116,16 +116,7 @@ extension TimeLineViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func configure(_ cell: TimeLIneCell, atIndexPath indexPath: IndexPath) {
-//        cell.disposer = self.dataSource?.observeObject(at: indexPath.item, block: { (user) in
-//            cell.mutterLabel.text = user?.mutter
-//            cell.profileLabel.text = (user?.nickName)! + ""
-//            if let ref: StorageReference = user?.thumbnail?.ref {
-//                cell.profileImageView.sd_setImage(with: ref, placeholderImage: UIImage(named: "loading-appcolor"))
-//            }
-//        })
         if let user: FirebaseApp.User = self.dataSource?.objects[indexPath.item] {
-            print("path:", indexPath.item)
-            print("nickname:", user.nickName)
             cell.mutterLabel.text = user.mutter
             cell.profileLabel.text = (user.nickName)! + ""
             if let ref: StorageReference = user.thumbnail?.ref {

@@ -12,4 +12,5 @@ import Salada
 class Message: Object {
     @objc dynamic var senderId: String?
     @objc dynamic var text: String?
+    @objc dynamic var postDate: Date?
 }

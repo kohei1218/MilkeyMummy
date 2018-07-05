@@ -9,90 +9,137 @@
 import UIKit
 import JSQMessagesViewController
 import Firebase
+import RAMAnimatedTabBarController
+import Salada
 
 class MessageViewController: JSQMessagesViewController {
     
-    var ref: DatabaseReference!
-    // メッセージ内容に関するプロパティ
-    var messages: [JSQMessage]?
-    // 背景画像に関するプロパティ
+
     var incomingBubble: JSQMessagesBubbleImage!
     var outgoingBubble: JSQMessagesBubbleImage!
-    // アバター画像に関するプロパティ
     var incomingAvatar: JSQMessagesAvatarImage!
     var outgoingAvatar: JSQMessagesAvatarImage!
-
+    
+    var opponentUser: FirebaseApp.User?
+    private var dataSource: DataSource<Message>?
+    private var user: FirebaseApp.User?
+    private var room: Room?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        ref = Database.database().reference()
-        // Do any additional setup after loading the view.
+        let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButtonItem
+        
+        if #available(iOS 11.0, *){ self.collectionView.contentInsetAdjustmentBehavior = .never; self.collectionView.contentInset = UIEdgeInsetsMake(64, 0, 40, 0); self.collectionView.scrollIndicatorInsets = self.collectionView.contentInset }
+        
+        inputToolbar!.contentView!.leftBarButtonItem = nil
+        automaticallyScrollsToMostRecentMessage = true
+        let bubbleFactory = JSQMessagesBubbleImageFactory()
+        self.incomingBubble = bubbleFactory?.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
+        self.outgoingBubble = bubbleFactory?.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
+        
+        self.incomingAvatar = JSQMessagesAvatarImageFactory.avatarImage(with: UIImage(named: "heart-red")!, diameter: 64)
+        self.outgoingAvatar = JSQMessagesAvatarImageFactory.avatarImage(with: UIImage(named: "heart-red")!, diameter: 64)
+        
+        observeFirebase()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func setupFirebase() {
-        // DatabaseReferenceのインスタンス化
-        ref = Database.database().reference()
-        
-        // 最新25件のデータをデータベースから取得する
-        // 最新のデータが追加されるたびに最新データを取得する
-        ref.queryLimited(toLast: 25).observe(DataEventType.childAdded, with: { (snapshot) -> Void in
-            let snapshotValue = snapshot.value as! NSDictionary
-            let text = snapshotValue["text"] as! String
-            let sender = snapshotValue["from"] as! String
-            let name = snapshotValue["name"] as! String
-            print(snapshot.value!)
-            let message = JSQMessage(senderId: sender, displayName: name, text: text)
-            self.messages?.append(message!)
-            self.finishSendingMessage()
-        })
+    override func viewWillAppear(_ animated: Bool) {
+        let animatedTabBar = self.tabBarController as! RAMAnimatedTabBarController
+        animatedTabBar.animationTabBarHidden(true)
     }
     
-    // Sendボタンが押された時に呼ばれるメソッド
+    private func observeFirebase() {
+        FirebaseApp.User.current { user in
+            self.user = user
+            self.senderId = user?.id
+            var roomid: String?
+            if user?.gender == "male" {
+                roomid = (user?.id)! + (self.opponentUser?.id)!
+            } else {
+                roomid = (self.opponentUser?.id)! + (user?.id)!
+            }
+            Room.observeSingle(roomid!, eventType: .value, block: { (room) in
+                self.room = room
+                let options: Options = Options()
+                options.sortDescirptors = [NSSortDescriptor(key: "postDate", ascending: true)]
+                self.dataSource = DataSource(reference: (room?.messages.ref)!, options: options, block: { [weak self](changes) in
+                    guard let collectionView: UICollectionView = self?.collectionView else { return }
+                    switch changes {
+                    case .initial:
+                        self?.collectionView.reloadData()
+                        self?.collectionView.setContentOffset(CGPoint(x: 0, y: 2000), animated: false)
+                    case .update(let deletions, let insertions, let modifications):
+                        collectionView.performBatchUpdates({
+                            collectionView.insertItems(at: insertions.map { IndexPath(row: $0, section: 0) })
+                            collectionView.deleteItems(at: deletions.map { IndexPath(row: $0, section: 0) })
+                            collectionView.reloadItems(at: modifications.map { IndexPath(row: $0, section: 0) })
+                        }, completion: nil)
+                    case .error(let error):
+                        print(error)
+                    }
+                })
+                self.finishSendingMessage()
+            })
+        }
+    }
+    
+    private func initMessageData(indexPath: IndexPath) -> JSQMessage {
+        let message = self.dataSource?.objects[indexPath.item]
+        var messageData: JSQMessage?
+        if user?.id == message?.senderId {
+            messageData = JSQMessage(senderId: user?.id, displayName: user?.nickName, text: message?.text)
+        } else {
+            messageData = JSQMessage(senderId: opponentUser?.id, displayName: opponentUser?.nickName, text: message?.text)
+        }
+        return messageData!
+    }
+    
     override func didPressSend(_ button: UIButton, withMessageText text: String, senderId: String, senderDisplayName: String, date: Date) {
-        
-        //メッセージの送信処理を完了する(画面上にメッセージが表示される)
         self.finishReceivingMessage(animated: true)
         
-        //firebaseにデータを送信、保存する
-        let post1: [String: Any] = ["senderId": senderId, "text": text, "date": ServerValue.timestamp()]
-        let post1Ref = ref.childByAutoId()
-        post1Ref.setValue(post1)
-        self.finishSendingMessage(animated: true)
-        
-        //キーボードを閉じる
+        if let _ = self.room {
+            let message = Message()
+            message.text = text
+            message.senderId = user?.id
+            message.postDate = Date()
+            message.save()
+            room?.messages.insert(message)
+            self.finishSendingMessage(animated: true)
+        }
         self.view.endEditing(true)
     }
     
-    // アイテムごとに参照するメッセージデータを返す
     override func collectionView(_ collectionView: JSQMessagesCollectionView, messageDataForItemAt indexPath: IndexPath) -> JSQMessageData {
-        return messages![indexPath.item]
+        return initMessageData(indexPath: indexPath)
     }
     
-    // アイテムごとのMessageBubble(背景)を返す
-    override func collectionView(_ collectionView: JSQMessagesCollectionView, messageBubbleImageDataForItemAt indexPath: IndexPath) -> JSQMessageBubbleImageDataSource {
-        let message = self.messages?[indexPath.item]
-        if message?.senderId == self.senderId {
-            return self.outgoingBubble
-        }
-        return self.incomingBubble
+    override func collectionView(_ collectionView: JSQMessagesCollectionView, messageBubbleImageDataForItemAt indexPath: IndexPath) ->
+        JSQMessageBubbleImageDataSource {
+            if initMessageData(indexPath: indexPath).senderId == self.user?.id {
+                return self.outgoingBubble
+            }
+            return self.incomingBubble
     }
     
-    // アイテムごとにアバター画像を返す
     override func collectionView(_ collectionView: JSQMessagesCollectionView, avatarImageDataForItemAt indexPath: IndexPath) -> JSQMessageAvatarImageDataSource? {
-        let message = self.messages?[indexPath.item]
-        if message?.senderId == self.senderId {
+        let message = initMessageData(indexPath: indexPath)
+        if message.senderId == self.senderId {
             return self.outgoingAvatar
         }
         return self.incomingAvatar
     }
     
-    // アイテムの総数を返す
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return messages!.count
+        if self.dataSource?.count == nil {
+            return 0
+        }
+        return (self.dataSource?.count)!
     }
-
+    
 }

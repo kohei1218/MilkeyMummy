@@ -42,6 +42,9 @@
 		55BD96A020EDC2B20083657F /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD969F20EDC2B20083657F /* Room.swift */; };
 		55BD96A220EDC2EE0083657F /* Room-Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD96A120EDC2EE0083657F /* Room-Message.swift */; };
 		55BD96A420EDC3C10083657F /* User-Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD96A320EDC3C10083657F /* User-Room.swift */; };
+		55BD96A620EDE36F0083657F /* MessageListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55BD96A520EDE36F0083657F /* MessageListCell.xib */; };
+		55BD96A820EDE3F80083657F /* MessageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD96A720EDE3F80083657F /* MessageListCell.swift */; };
+		55BD96AA20EDE51F0083657F /* MessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD96A920EDE51F0083657F /* MessageListViewController.swift */; };
 		7CE6795270B2146E097D4E24 /* Pods_MilkeyMummy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3955F4ABC00D016156AE482 /* Pods_MilkeyMummy.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +86,9 @@
 		55BD969F20EDC2B20083657F /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		55BD96A120EDC2EE0083657F /* Room-Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Room-Message.swift"; sourceTree = "<group>"; };
 		55BD96A320EDC3C10083657F /* User-Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User-Room.swift"; sourceTree = "<group>"; };
+		55BD96A520EDE36F0083657F /* MessageListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageListCell.xib; sourceTree = "<group>"; };
+		55BD96A720EDE3F80083657F /* MessageListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListCell.swift; sourceTree = "<group>"; };
+		55BD96A920EDE51F0083657F /* MessageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListViewController.swift; sourceTree = "<group>"; };
 		C4744C64275D79667383646D /* Pods-MilkeyMummy.develop_release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkeyMummy.develop_release.xcconfig"; path = "Pods/Target Support Files/Pods-MilkeyMummy/Pods-MilkeyMummy.develop_release.xcconfig"; sourceTree = "<group>"; };
 		D3955F4ABC00D016156AE482 /* Pods_MilkeyMummy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MilkeyMummy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D88755DE3B5F3BB9F564E57C /* Pods-MilkeyMummy.staging_debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkeyMummy.staging_debug.xcconfig"; path = "Pods/Target Support Files/Pods-MilkeyMummy/Pods-MilkeyMummy.staging_debug.xcconfig"; sourceTree = "<group>"; };
@@ -174,6 +180,7 @@
 				559A350720E0DF69000B302F /* TimeLineDetailViewController.swift */,
 				55BD969320ECADFC0083657F /* FavoriteViewController.swift */,
 				55BD969920ED2E7A0083657F /* MessageViewController.swift */,
+				55BD96A920EDE51F0083657F /* MessageListViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -219,6 +226,8 @@
 				558513E920E15D61001982D9 /* LoveButton.swift */,
 				55BD969520ECAE470083657F /* FavoriteCell.xib */,
 				55BD969720ECB06C0083657F /* FavoriteCell.swift */,
+				55BD96A520EDE36F0083657F /* MessageListCell.xib */,
+				55BD96A720EDE3F80083657F /* MessageListCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -306,6 +315,7 @@
 				55BD969620ECAE470083657F /* FavoriteCell.xib in Resources */,
 				552B813F20CE3F1B00E8C71A /* LaunchScreen.storyboard in Resources */,
 				5556814B20D3F9E60030B90F /* TimeLineCell.xib in Resources */,
+				55BD96A620EDE36F0083657F /* MessageListCell.xib in Resources */,
 				552B813C20CE3F1B00E8C71A /* Assets.xcassets in Resources */,
 				552B813720CE3F1A00E8C71A /* Main.storyboard in Resources */,
 				552B815E20CE92F800E8C71A /* Regist.storyboard in Resources */,
@@ -408,6 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5556815320D7C6880030B90F /* UITextView+exstention.swift in Sources */,
+				55BD96A820EDE3F80083657F /* MessageListCell.swift in Sources */,
 				5556814F20D7BFE30030B90F /* UITextField+exstention.swift in Sources */,
 				559A350820E0DF69000B302F /* TimeLineDetailViewController.swift in Sources */,
 				558513EA20E15D61001982D9 /* LoveButton.swift in Sources */,
@@ -424,6 +435,7 @@
 				55BD96A420EDC3C10083657F /* User-Room.swift in Sources */,
 				55370C6E20CFBC8D00032B82 /* User.swift in Sources */,
 				552B815320CE431E00E8C71A /* Environment.swift in Sources */,
+				55BD96AA20EDE51F0083657F /* MessageListViewController.swift in Sources */,
 				55BD969420ECADFC0083657F /* FavoriteViewController.swift in Sources */,
 				5556814D20D3FD060030B90F /* TimeLIneCell.swift in Sources */,
 				55BD969C20ED38530083657F /* Message.swift in Sources */,
