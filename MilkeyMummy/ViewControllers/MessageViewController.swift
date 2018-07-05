@@ -145,7 +145,7 @@ class MessageViewController: JSQMessagesViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = super.collectionView(collectionView, cellForItemAt: indexPath) as! JSQMessagesCollectionViewCell
         if let ref: StorageReference = opponentUser?.thumbnail?.ref {
-            cell.avatarImageView.sd_setImage(with: ref, placeholderImage: UIImage(named: "loading-appcolor"))
+            cell.avatarImageView.sd_setImage(with: ref, placeholderImage: UIImage(named: "nil-image"))
         }
         return cell
     }

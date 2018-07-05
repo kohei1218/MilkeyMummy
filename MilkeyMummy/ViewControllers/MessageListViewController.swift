@@ -79,7 +79,7 @@ extension MessageListViewController: UITableViewDelegate, UITableViewDataSource 
             cell.userFigureLabel.text = user.figure
             cell.userMutterLabel.text = user.mutter
             if let ref: StorageReference = user.thumbnail?.ref {
-                cell.userImageView.sd_setImage(with: ref, placeholderImage: UIImage(named: "loading-appcolor"))
+                cell.userImageView.sd_setImage(with: ref, placeholderImage: UIImage(named: "nil-image"))
             }
         }
         

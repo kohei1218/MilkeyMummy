@@ -120,7 +120,7 @@ extension TimeLineViewController: UICollectionViewDelegate, UICollectionViewData
             cell.mutterLabel.text = user.mutter
             cell.profileLabel.text = (user.nickName)! + ""
             if let ref: StorageReference = user.thumbnail?.ref {
-                cell.profileImageView.sd_setImage(with: ref, placeholderImage: UIImage(named: "loading-appcolor"))
+                cell.profileImageView.sd_setImage(with: ref, placeholderImage: UIImage(named: "nil-image"))
             }
         }
     }

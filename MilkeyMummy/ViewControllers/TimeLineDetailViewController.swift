@@ -84,7 +84,7 @@ class TimeLineDetailViewController: UIViewController {
         self.navigationItem.title = opponentUser?.nickName
         setUserProfile()
         if let ref: StorageReference = opponentUser?.thumbnail?.ref {
-            self.profileImageView.sd_setImage(with: ref, placeholderImage: UIImage(named: "loading-appcolor"))
+            self.profileImageView.sd_setImage(with: ref, placeholderImage: UIImage(named: "nil-image"))
         }
     }
     
